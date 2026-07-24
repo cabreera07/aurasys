@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | Aurasys</title>
+  <meta name="description" content="Inicia un diagnóstico, escribe por correo o sigue a Aurasys en TikTok." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <a class="wa-float" id="waFloat" href="" target="_blank" rel="noreferrer" aria-label="WhatsApp">WhatsApp</a>
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">↑</button>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img id="siteLogo" src="" alt="Aurasys logo" class="brand-logo" />
+        <span>Aurasys</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="proceso.html">Proceso</a>
+        <a href="diagnostico.html">Diagnóstico</a>
+        <a href="contacto.html">Contacto</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">🌙</button>
+        <a href="diagnostico.html" class="btn btn-primary small">Iniciar diagnóstico</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero-subpage">
+      <div class="container hero-subpage-grid">
+        <div data-animate>
+          <span class="eyebrow">Contacto</span>
+          <h1>Hablemos cuando estés listo.</h1>
+          <p>Puedes iniciar con un diagnóstico, escribir por correo o seguirnos en TikTok.</p>
+        </div>
+        <div class="hero-art card" data-animate>
+          <img src="assets/images/hero-placeholder.svg" alt="placeholder de contacto" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <article class="contact-card card" data-animate>
+          <h3>Correo electrónico</h3>
+          <p>Canal formal para propuestas y seguimiento.</p>
+          <a id="contactEmail" class="btn btn-secondary small">Enviar correo</a>
+        </article>
+        <article class="contact-card card" data-animate>
+          <h3>TikTok</h3>
+          <p>Contenido, ideas y novedades de Aurasys.</p>
+          <a id="contactTikTok" class="btn btn-secondary small" target="_blank" rel="noreferrer">Ver TikTok</a>
+        </article>
+        <article class="contact-card card" data-animate>
+          <h3>WhatsApp</h3>
+          <p>Canal opcional para seguimiento rápido.</p>
+          <a id="contactWhatsApp" class="btn btn-secondary small" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt-bg">
+      <div class="container">
+        <div class="section-heading centered" data-animate>
+          <span class="eyebrow">FAQ</span>
+          <h2>Preguntas rápidas</h2>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item card" data-animate>
+            <button class="faq-question" aria-expanded="false">¿El diagnóstico tiene costo?</button>
+            <div class="faq-answer"><p>No. El envío del formulario no tiene costo.</p></div>
+          </article>
+          <article class="faq-item card" data-animate>
+            <button class="faq-question" aria-expanded="false">¿Cuándo recibiré respuesta?</button>
+            <div class="faq-answer"><p>Nos comunicaremos contigo en 2 a 3 días hábiles.</p></div>
+          </article>
+          <article class="faq-item card" data-animate>
+            <button class="faq-question" aria-expanded="false">¿Cómo recibiré la propuesta?</button>
+            <div class="faq-answer"><p>La propuesta formal se enviará por correo electrónico en PDF.</p></div>
+          </article>
+          <article class="faq-item card" data-animate>
+            <button class="faq-question" aria-expanded="false">¿Cómo se realizan los pagos?</button>
+            <div class="faq-answer"><p>Por transferencia bancaria en tres etapas.</p></div>
+          </article>
+          <article class="faq-item card" data-animate>
+            <button class="faq-question" aria-expanded="false">¿Incluye correcciones?</button>
+            <div class="faq-answer"><p>Sí. Cada proyecto incluye una ronda de ajustes dentro del alcance acordado.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <img id="footerLogo" src="" alt="Aurasys logo" class="brand-logo" />
+          <span>Aurasys</span>
+        </div>
+        <p class="footer-slogan">Dale estructura a tus ideas.</p>
+        <p>Soluciones digitales simples para organizar ideas, tareas, proyectos e información.</p>
+      </div>
+      <div>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="proceso.html">Proceso</a></li>
+          <li><a href="diagnostico.html">Diagnóstico</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="footer-links">
+          <li><a id="footerEmail" href="">Correo</a></li>
+          <li><a id="footerTikTok" href="" target="_blank" rel="noreferrer">TikTok</a></li>
+          <li><a id="footerWhatsApp" href="" target="_blank" rel="noreferrer">WhatsApp</a></li>
+        </ul>
+        <p class="copyright">© 2026 Aurasys. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
