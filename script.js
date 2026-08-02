@@ -203,14 +203,21 @@ async function sendRequest(payload) {
     return Promise.resolve({ ok: true });
   }
 
+  const formData = new URLSearchParams();
+  for (const key in payload) {
+    formData.append(key, payload[key]);
+  }
+
   const response = await fetch(googleScriptUrl, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
+    body: formData,
   });
 
-  if (!response.ok) throw new Error("Fallo al enviar la solicitud.");
-  return response.json().catch(() => ({ ok: true }));
+  if (!response.ok) {
+    throw new Error(`Fallo al enviar la solicitud. Status: ${response.status}`);
+  }
+
+  return { ok: true };
 }
 
 function resetForm() {
