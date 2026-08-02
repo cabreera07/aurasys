@@ -1,4 +1,4 @@
-﻿const DEFAULT_THEME = "light";
+﻿const DEFAULT_THEME = "dark";
 const form = document.getElementById("diagnosticForm");
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
@@ -25,8 +25,8 @@ function setTheme(theme) {
 function applySharedConfig() {
   const config = window.AURASYS_CONFIG || {};
   const logo = config.logoPath || "assets/logo/logo-placeholder.svg";
-  const whatsapp = config.whatsappUrl || "https://wa.me/502XXXXXXXX";
-  const email = config.email || "tucorreo@ejemplo.com";
+  const whatsapp = config.whatsappUrl || "https://wa.me/50258798301";
+  const email = config.email || "CABREERA07WALTER@gmail.com";
   const tiktok = config.tiktokUrl || "https://www.tiktok.com/@tuusuario";
 
   document.querySelectorAll("#siteLogo, #footerLogo").forEach((img) => {
@@ -43,6 +43,27 @@ function applySharedConfig() {
   });
   document.querySelectorAll("#footerTikTok, #contactTikTok").forEach((a) => {
     a.href = tiktok;
+  });
+}
+
+function animateCounters() {
+  document.querySelectorAll("[data-stat]").forEach((counter) => {
+    const target = Number(counter.dataset.stat || 0);
+    const suffix = counter.dataset.suffix || "";
+    const startValue = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    const tick = (timestamp) => {
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = startValue + (target - startValue) * eased;
+      const rawValue = Number.isInteger(target) ? Math.round(current) : current.toFixed(1);
+      counter.textContent = `${rawValue}${suffix}`;
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
   });
 }
 
@@ -232,6 +253,7 @@ window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("aurasys-theme") || DEFAULT_THEME;
   setTheme(savedTheme);
   applySharedConfig();
+  animateCounters();
   setHeaderState();
   updateScrollProgress();
   setActiveNav();
