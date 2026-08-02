@@ -199,22 +199,28 @@ async function sendRequest(payload) {
   const googleScriptUrl = config.googleScriptUrl || "";
 
   if (!googleScriptUrl || googleScriptUrl.includes("PEGA_AQUI")) {
-    console.info("Google Apps Script no configurado. Simulando envío exitoso localmente.");
+    console .info("Google Apps Script no configurado. Simulando envío exitoso localmente.");
     return Promise.resolve({ ok: true });
-  }
-
-  const formData = new URLSearchParams();
-  for (const key in payload) {
-    formData.append(key, payload[key]);
   }
 
   const response = await fetch(googleScriptUrl, {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify(payload),
   });
 
   if (!response.ok) {
     throw new Error(`Fallo al enviar la solicitud. Status: ${response.status}`);
+  }
+
+  const contentType = response.headers.get("content-type") || "";
+  if (contentType.includes("application/json")) {
+    const result = await response.json();
+    if (result?.result && result.result !== "success") {
+      throw new Error(result.error || "El servidor devolvio un error al guardar en Google Sheets.");
+    }
   }
 
   return { ok: true };
@@ -244,7 +250,8 @@ async function handleSubmit(event) {
     resetForm();
   } catch (error) {
     console.error(error);
-    showMessage("No pudimos enviar tu solicitud en este momento. Inténtalo nuevamente más tarde.", "error");
+    const detail = error instanceof Error ? error.message : "Error desconocido";
+    showMessage(`No pudimos enviar tu solicitud. ${detail}`, "error");
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = "Enviar solicitud";
@@ -286,6 +293,3 @@ if (form) {
     radio.addEventListener("change", updateContactHelp);
   });
 }
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 960) closeMenu();
-});
