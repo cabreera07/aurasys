@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120" role="img" aria-label="Aurasys logo">
+  <defs>
+    <linearGradient id="aurasysBars" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(14 18)">
+    <g transform="translate(0 42)">
+      <rect x="0" y="10" width="10" height="22" rx="5" fill="#2563EB"/>
+      <rect x="16" y="0" width="10" height="32" rx="5" fill="#60A5FA"/>
+      <rect x="32" y="-16" width="10" height="48" rx="5" fill="#38BDF8"/>
+      <rect x="48" y="0" width="10" height="32" rx="5" fill="#60A5FA"/>
+      <rect x="64" y="10" width="10" height="22" rx="5" fill="#2563EB"/>
+    </g>
+    <g transform="translate(96 0)">
+      <text x="0" y="62" font-size="42" font-weight="800" font-family="Poppins, Inter, Arial, sans-serif" fill="#0F172A">Aura</text>
+      <text x="110" y="62" font-size="42" font-weight="300" font-family="Poppins, Inter, Arial, sans-serif" fill="#38BDF8">sys</text>
+      <text x="2" y="86" font-size="12" letter-spacing="1.8" font-family="Inter, Arial, sans-serif" fill="#64748B">DALE ESTRUCTURA A TUS IDEAS</text>
+    </g>
+  </g>
+</svg>

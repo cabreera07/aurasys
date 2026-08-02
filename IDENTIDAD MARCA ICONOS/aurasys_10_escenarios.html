@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - 10 Escenarios de Marca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-page: #f1f5f9; --c-dark: #0f172a; --c-blue1: #2563eb; --c-blue2: #60a5fa; --c-cyan: #38bdf8; }
+        body { background-color: var(--bg-page); font-family: 'Poppins', sans-serif; margin: 0; padding: 40px 20px; color: #1e293b; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
+        .header p { color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+        .card { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; flex-direction: column; background: #fff; border: 1px solid #e2e8f0; }
+        .preview { height: 220px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+        .info { padding: 20px; border-top: 1px solid #e2e8f0; flex-grow: 1; }
+        .info h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: #0f172a; }
+        .info p { margin: 0; font-size: 0.85rem; color: #64748b; line-height: 1.5; }
+
+        /* ANIMACIONES Y BARRAS SVG */
+        .bar { transform-origin: bottom; transform: scaleY(0.1); }
+        .w1 { animation: wave 1s ease-in-out infinite alternate 0.0s; }
+        .w2 { animation: wave 1s ease-in-out infinite alternate 0.2s; }
+        .w3 { animation: wave 1s ease-in-out infinite alternate 0.4s; }
+        .w4 { animation: wave 1s ease-in-out infinite alternate 0.2s; }
+        .w5 { animation: wave 1s ease-in-out infinite alternate 0.0s; }
+        @keyframes wave { 0% { transform: scaleY(0.2); } 100% { transform: scaleY(1); } }
+
+        /* --- ESCENARIO 1: APP ICON --- */
+        .s-app .preview { background: #f8fafc; }
+        .app-box { fill: var(--c-dark); filter: drop-shadow(0 10px 15px rgba(15, 23, 42, 0.3)); }
+        
+        /* --- ESCENARIO 2: APILADO (VERTICAL) --- */
+        .s-stacked .preview { background: #ffffff; }
+        
+        /* --- ESCENARIO 3: NAVBAR (HORIZONTAL EXTREMO) --- */
+        .s-nav .preview { background: #0f172a; align-items: flex-start; padding-top: 20px; }
+        .nav-bar-sim { background: #1e293b; width: 90%; height: 60px; border-radius: 8px; display: flex; align-items: center; padding: 0 20px; }
+
+        /* --- ESCENARIO 4: LETRERO NEÓN --- */
+        .s-neon .preview { background: #020617; }
+        .neon-glow { filter: drop-shadow(0 0 8px var(--c-cyan)) drop-shadow(0 0 20px var(--c-blue1)); }
+        
+        /* --- ESCENARIO 5: GLASSMORPHISM --- */
+        .s-glass .preview { background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899); background-size: 200% 200%; animation: gradMove 5s ease infinite; }
+        .glass-card { fill: rgba(255, 255, 255, 0.2); stroke: rgba(255, 255, 255, 0.5); stroke-width: 1; backdrop-filter: blur(10px); }
+        @keyframes gradMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        /* --- ESCENARIO 6: WIREFRAME (OUTLINE) --- */
+        .s-wire .preview { background: #0f172a; }
+        
+        /* --- ESCENARIO 7: PATRÓN DE FONDO --- */
+        .s-pattern .preview { background: #ffffff; position: relative; }
+        .pattern-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; }
+        
+        /* --- ESCENARIO 8: ALTO CONTRASTE (DUOTONO) --- */
+        .s-duo .preview { background: #fde047; /* Amarillo brillante */ }
+        
+        /* --- ESCENARIO 9: MARCA DE AGUA SOBRE IMAGEN --- */
+        .s-water .preview { background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80') center/cover; }
+        .watermark { opacity: 0.4; }
+
+        /* --- ESCENARIO 10: INSIGNIA / SELLO --- */
+        .s-badge .preview { background: #f8fafc; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>10 Escenarios de Aplicación (Aurasys)</h1>
+        <p>Un manual de marca completo debe prever cómo se comportará el logotipo en el mundo real. Aquí tienes 10 aplicaciones técnicas y creativas de tu diseño en SVG.</p>
+    </div>
+
+    <div class="grid">
+        
+        <!-- 1. ICONO DE APP -->
+        <div class="card s-app">
+            <div class="preview">
+                <svg width="120" height="120" viewBox="0 0 120 120">
+                    <rect class="app-box" x="10" y="10" width="100" height="100" rx="25"/>
+                    <g transform="translate(36, 75)">
+                        <rect class="bar w1" x="0" y="-12" width="6" height="12" rx="3" fill="#2563eb"/>
+                        <rect class="bar w2" x="10" y="-24" width="6" height="24" rx="3" fill="#60a5fa"/>
+                        <rect class="bar w3" x="20" y="-36" width="6" height="36" rx="3" fill="#38bdf8"/>
+                        <rect class="bar w4" x="30" y="-24" width="6" height="24" rx="3" fill="#60a5fa"/>
+                        <rect class="bar w5" x="40" y="-12" width="6" height="12" rx="3" fill="#2563eb"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>1. Icono de App / Favicon</h3>
+                <p>El isotipo aislado dentro de una caja con proporciones de aplicación móvil (iOS/Android) o foto de perfil.</p>
+            </div>
+        </div>
+
+        <!-- 2. APILADO VERTICAL -->
+        <div class="card s-stacked">
+            <div class="preview">
+                <svg width="200" height="150" viewBox="0 0 200 150">
+                    <g transform="translate(100, 60)">
+                        <g transform="translate(-24, 0)">
+                            <rect class="bar w1" x="0" y="-20" width="8" height="20" rx="4" fill="#1e3a8a"/>
+                            <rect class="bar w2" x="12" y="-40" width="8" height="40" rx="4" fill="#2563eb"/>
+                            <rect class="bar w3" x="24" y="-60" width="8" height="60" rx="4" fill="#38bdf8"/>
+                            <rect class="bar w4" x="36" y="-40" width="8" height="40" rx="4" fill="#2563eb"/>
+                            <rect class="bar w5" x="48" y="-20" width="8" height="20" rx="4" fill="#1e3a8a"/>
+                        </g>
+                        <text x="0" y="45" font-size="32px" text-anchor="middle">
+                            <tspan fill="#0f172a" font-weight="800">Aura</tspan><tspan fill="#2563eb" font-weight="300">sys</tspan>
+                        </text>
+                        <text x="0" y="65" font-size="10px" fill="#64748b" text-anchor="middle" letter-spacing="1px">Dale estructura a tus ideas</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>2. Formato Apilado (Vertical)</h3>
+                <p>Estructura centrada. Indispensable para etiquetas, tazas, camisetas o espacios donde el ancho es muy limitado.</p>
+            </div>
+        </div>
+
+        <!-- 3. COMPACTO PARA NAVBAR -->
+        <div class="card s-nav">
+            <div class="preview">
+                <div class="nav-bar-sim">
+                    <svg width="150" height="40" viewBox="0 0 150 40">
+                        <g transform="translate(0, 30)">
+                            <g transform="translate(0, 0)">
+                                <rect class="bar w1" x="0" y="-10" width="4" height="10" rx="2" fill="#2563eb"/>
+                                <rect class="bar w2" x="6" y="-20" width="4" height="20" rx="2" fill="#60a5fa"/>
+                                <rect class="bar w3" x="12" y="-30" width="4" height="30" rx="2" fill="#38bdf8"/>
+                                <rect class="bar w4" x="18" y="-20" width="4" height="20" rx="2" fill="#60a5fa"/>
+                                <rect class="bar w5" x="24" y="-10" width="4" height="10" rx="2" fill="#2563eb"/>
+                            </g>
+                            <text x="35" y="0" font-size="24px">
+                                <tspan fill="#ffffff" font-weight="800">Aura</tspan><tspan fill="#38bdf8" font-weight="300">sys</tspan>
+                            </text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="info">
+                <h3>3. Barra de Navegación (Compacto)</h3>
+                <p>Sin el eslogan, reducido en altura para encajar perfectamente en la cabecera (header) de una página web.</p>
+            </div>
+        </div>
+
+        <!-- 4. LETRERO NEÓN -->
+        <div class="card s-neon">
+            <div class="preview">
+                <svg width="220" height="80" viewBox="0 0 220 80">
+                    <g transform="translate(10, 60)" class="neon-glow">
+                        <g transform="translate(0, 0)">
+                            <rect class="bar w1" x="0" y="-12" width="6" height="12" rx="3" fill="#2563eb"/>
+                            <rect class="bar w2" x="10" y="-24" width="6" height="24" rx="3" fill="#38bdf8"/>
+                            <rect class="bar w3" x="20" y="-36" width="6" height="36" rx="3" fill="#ffffff"/>
+                            <rect class="bar w4" x="30" y="-24" width="6" height="24" rx="3" fill="#38bdf8"/>
+                            <rect class="bar w5" x="40" y="-12" width="6" height="12" rx="3" fill="#2563eb"/>
+                        </g>
+                        <text x="55" y="0" font-size="32px">
+                            <tspan fill="#ffffff" font-weight="800">Aura</tspan><tspan fill="#38bdf8" font-weight="300">sys</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>4. Señalética Neón / Glow</h3>
+                <p>Aplicación con efectos de luz ambiental y resplandor, simulando cómo se vería en un letrero físico de oficina.</p>
+            </div>
+        </div>
+
+        <!-- 5. GLASSMORPHISM -->
+        <div class="card s-glass">
+            <div class="preview">
+                <svg width="240" height="140" viewBox="0 0 240 140">
+                    <!-- Tarjeta de Cristal -->
+                    <rect class="glass-card" x="10" y="10" width="220" height="120" rx="15"/>
+                    <g transform="translate(30, 85)">
+                        <g transform="translate(0, 0)">
+                            <rect class="bar w1" x="0" y="-14" width="6" height="14" rx="3" fill="#ffffff"/>
+                            <rect class="bar w2" x="10" y="-28" width="6" height="28" rx="3" fill="#ffffff"/>
+                            <rect class="bar w3" x="20" y="-42" width="6" height="42" rx="3" fill="#ffffff"/>
+                            <rect class="bar w4" x="30" y="-28" width="6" height="28" rx="3" fill="#ffffff"/>
+                            <rect class="bar w5" x="40" y="-14" width="6" height="14" rx="3" fill="#ffffff"/>
+                        </g>
+                        <text x="55" y="0" font-size="28px" fill="#ffffff">
+                            <tspan font-weight="800">Aura</tspan><tspan font-weight="300">sys</tspan>
+                        </text>
+                        <text x="57" y="18" font-size="9px" fill="#ffffff" opacity="0.8">Dale estructura a tus ideas</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>5. Glassmorphism / Tarjeta</h3>
+                <p>Logotipo monocromo blanco impreso sobre una tarjeta de cristal esmerilado con fondos vivos (tendencia UI).</p>
+            </div>
+        </div>
+
+        <!-- 6. WIREFRAME (LÍNEAS) -->
+        <div class="card s-wire">
+            <div class="preview">
+                <svg width="250" height="90" viewBox="0 0 250 90">
+                    <g transform="translate(10, 65)" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                        <g transform="translate(0, 0)">
+                            <rect class="bar w1" x="0" y="-14" width="6" height="14" rx="3"/>
+                            <rect class="bar w2" x="10" y="-28" width="6" height="28" rx="3"/>
+                            <rect class="bar w3" x="20" y="-42" width="6" height="42" rx="3"/>
+                            <rect class="bar w4" x="30" y="-28" width="6" height="28" rx="3"/>
+                            <rect class="bar w5" x="40" y="-14" width="6" height="14" rx="3"/>
+                        </g>
+                        <!-- Texto convertido a trazado simulado con fill none -->
+                        <text x="55" y="0" font-size="34px" fill="none" stroke="#60a5fa" stroke-width="1.5">
+                            <tspan font-weight="800">Aura</tspan><tspan font-weight="300">sys</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>6. Wireframe / Contorno</h3>
+                <p>Sin relleno, únicamente trazos (strokes). Da un aspecto técnico y arquitectónico (blueprint), ideal para fondos muy oscuros.</p>
+            </div>
+        </div>
+
+        <!-- 7. PATRÓN DE FONDO -->
+        <div class="card s-pattern">
+            <div class="preview">
+                <!-- Generando patrón SVG repetitivo -->
+                <svg class="pattern-bg" width="100%" height="100%">
+                    <defs>
+                        <pattern id="pat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <g transform="translate(10, 30) scale(0.4)">
+                                <rect x="0" y="-20" width="8" height="20" rx="4" fill="#0f172a"/>
+                                <rect x="12" y="-40" width="8" height="40" rx="4" fill="#0f172a"/>
+                                <rect x="24" y="-60" width="8" height="60" rx="4" fill="#0f172a"/>
+                                <rect x="36" y="-40" width="8" height="40" rx="4" fill="#0f172a"/>
+                                <rect x="48" y="-20" width="8" height="20" rx="4" fill="#0f172a"/>
+                            </g>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#pat)"/>
+                </svg>
+                <svg width="220" height="80" viewBox="0 0 220 80" style="position: relative; z-index: 2;">
+                    <rect width="220" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+                    <g transform="translate(15, 50)">
+                        <text x="40" y="0" font-size="28px" text-anchor="middle" transform="translate(70,0)">
+                            <tspan fill="#0f172a" font-weight="800">Aura</tspan><tspan fill="#2563eb" font-weight="300">sys</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>7. Patrón Textil / Empaque</h3>
+                <p>El isotipo utilizado repetitivamente como textura de fondo. Excelente para papel de regalo, forros internos o empaques.</p>
+            </div>
+        </div>
+
+        <!-- 8. ALTO CONTRASTE (DUOTONO) -->
+        <div class="card s-duo">
+            <div class="preview">
+                <svg width="240" height="90" viewBox="0 0 240 90">
+                    <g transform="translate(10, 60)">
+                        <g transform="translate(0, 0)">
+                            <rect class="bar w1" x="0" y="-16" width="8" height="16" rx="4" fill="#0f172a"/>
+                            <rect class="bar w2" x="12" y="-32" width="8" height="32" rx="4" fill="#0f172a"/>
+                            <rect class="bar w3" x="24" y="-48" width="8" height="48" rx="4" fill="#0f172a"/>
+                            <rect class="bar w4" x="36" y="-32" width="8" height="32" rx="4" fill="#0f172a"/>
+                            <rect class="bar w5" x="48" y="-16" width="8" height="16" rx="4" fill="#0f172a"/>
+                        </g>
+                        <text x="65" y="0" font-size="36px" fill="#0f172a">
+                            <tspan font-weight="800">Aura</tspan><tspan font-weight="300">sys</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>8. Alto Contraste (Duotono pop)</h3>
+                <p>El azul "Deep Tech" más oscuro aplicado sobre un fondo de color complementario vibrante. Ideal para material publicitario llamativo.</p>
+            </div>
+        </div>
+
+        <!-- 9. MARCA DE AGUA SOBRE IMAGEN -->
+        <div class="card s-water">
+            <div class="preview">
+                <svg width="220" height="80" viewBox="0 0 220 80" class="watermark">
+                    <g transform="translate(10, 60)">
+                        <g transform="translate(0, 0)">
+                            <rect class="bar w1" x="0" y="-16" width="8" height="16" rx="4" fill="#ffffff"/>
+                            <rect class="bar w2" x="12" y="-32" width="8" height="32" rx="4" fill="#ffffff"/>
+                            <rect class="bar w3" x="24" y="-48" width="8" height="48" rx="4" fill="#ffffff"/>
+                            <rect class="bar w4" x="36" y="-32" width="8" height="32" rx="4" fill="#ffffff"/>
+                            <rect class="bar w5" x="48" y="-16" width="8" height="16" rx="4" fill="#ffffff"/>
+                        </g>
+                        <text x="65" y="0" font-size="36px" fill="#ffffff">
+                            <tspan font-weight="800">Aura</tspan><tspan font-weight="300">sys</tspan>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>9. Marca de Agua (Opacidad)</h3>
+                <p>Versión blanca al 40% de opacidad. Se utiliza para proteger propiedad intelectual en fotografías, planos arquitectónicos o documentos confidenciales.</p>
+            </div>
+        </div>
+
+        <!-- 10. INSIGNIA / SELLO -->
+        <div class="card s-badge">
+            <div class="preview">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <g transform="translate(75, 75)">
+                        <!-- Círculos concéntricos -->
+                        <circle cx="0" cy="0" r="65" fill="#0f172a"/>
+                        <circle cx="0" cy="0" r="58" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 4"/>
+                        <!-- Isotipo -->
+                        <g transform="translate(-24, 15)">
+                            <rect class="bar w1" x="0" y="-14" width="6" height="14" rx="3" fill="#2563eb"/>
+                            <rect class="bar w2" x="10" y="-28" width="6" height="28" rx="3" fill="#60a5fa"/>
+                            <rect class="bar w3" x="20" y="-42" width="6" height="42" rx="3" fill="#38bdf8"/>
+                            <rect class="bar w4" x="30" y="-28" width="6" height="28" rx="3" fill="#60a5fa"/>
+                            <rect class="bar w5" x="40" y="-14" width="6" height="14" rx="3" fill="#2563eb"/>
+                        </g>
+                        <!-- Texto curvo (simulado para compatibilidad pura SVG) -->
+                        <text x="0" y="45" font-size="12px" fill="#ffffff" text-anchor="middle" font-weight="800" letter-spacing="2px">AURASYS</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>10. Sello / Insignia de Confianza</h3>
+                <p>Una composición circular contenida. Ideal para certificados, firmas de correo electrónico, sellos de calidad o adhesivos (stickers).</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

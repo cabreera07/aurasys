@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="520" viewBox="0 0 860 520" role="img" aria-label="Aurasys proceso visual">
+  <defs>
+    <linearGradient id="processBg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#091427"/>
+      <stop offset="100%" stop-color="#101827"/>
+    </linearGradient>
+  </defs>
+  <rect width="860" height="520" rx="30" fill="url(#processBg)"/>
+  <g opacity="0.18">
+    <circle cx="180" cy="120" r="120" fill="#2563EB"/>
+    <circle cx="690" cy="430" r="150" fill="#0EA5E9"/>
+  </g>
+  <g transform="translate(120 110)">
+    <rect x="0" y="0" width="150" height="90" rx="20" fill="#0F172A" stroke="#1E293B"/>
+    <rect x="196" y="0" width="150" height="90" rx="20" fill="#0F172A" stroke="#1E293B"/>
+    <rect x="392" y="0" width="150" height="90" rx="20" fill="#0F172A" stroke="#1E293B"/>
+    <rect x="588" y="0" width="150" height="90" rx="20" fill="#0F172A" stroke="#1E293B"/>
+    <path d="M150 45 H196 M392 45 H588" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 12"/>
+    <circle cx="75" cy="45" r="18" fill="#2563EB"/>
+    <circle cx="271" cy="45" r="18" fill="#60A5FA"/>
+    <circle cx="467" cy="45" r="18" fill="#38BDF8"/>
+    <circle cx="663" cy="45" r="18" fill="#2563EB"/>
+    <text x="75" y="50" fill="#E2E8F0" font-size="22" font-weight="800" text-anchor="middle">1</text>
+    <text x="271" y="50" fill="#E2E8F0" font-size="22" font-weight="800" text-anchor="middle">2</text>
+    <text x="467" y="50" fill="#E2E8F0" font-size="22" font-weight="800" text-anchor="middle">3</text>
+    <text x="663" y="50" fill="#E2E8F0" font-size="22" font-weight="800" text-anchor="middle">4</text>
+  </g>
+  <g transform="translate(90 250)">
+    <rect x="0" y="0" width="680" height="150" rx="24" fill="#0F172A" stroke="#1E293B"/>
+    <g transform="translate(52 40)">
+      <rect x="0" y="28" width="18" height="62" rx="8" fill="#2563EB"/>
+      <rect x="36" y="10" width="18" height="80" rx="8" fill="#60A5FA"/>
+      <rect x="72" y="42" width="18" height="48" rx="8" fill="#38BDF8"/>
+      <rect x="108" y="0" width="18" height="90" rx="8" fill="#60A5FA"/>
+      <rect x="144" y="20" width="18" height="70" rx="8" fill="#2563EB"/>
+    </g>
+    <g fill="#E2E8F0" font-family="Inter, Arial, sans-serif">
+      <text x="330" y="62" font-size="18" font-weight="700">Diagnóstico</text>
+      <text x="330" y="92" font-size="16" fill="#94A3B8">Diagnosticar, ordenar y proponer</text>
+    </g>
+  </g>
+</svg>

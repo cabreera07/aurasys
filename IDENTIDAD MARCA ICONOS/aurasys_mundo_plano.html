@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Mundo Ilustrado Plano (Vector Art)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f8fafc;
+            --c-navy: #0f172a;
+            --c-blue: #2563eb;
+            --c-light-blue: #60a5fa;
+            --c-cyan: #38bdf8;
+            --c-white: #ffffff;
+            --c-gray: #e2e8f0;
+            --c-dark-gray: #64748b;
+        }
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--c-navy);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: var(--c-dark-gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--c-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid var(--c-gray);
+            display: flex;
+            flex-direction: column;
+        }
+        .preview {
+            background: #f1f5f9;
+            height: 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--c-gray);
+        }
+        .info { padding: 25px; }
+        .info h3 { margin: 0 0 8px 0; font-size: 1.2rem; color: var(--c-navy); }
+        .info p { margin: 0; font-size: 0.9rem; color: var(--c-dark-gray); line-height: 1.5; }
+
+        svg { width: 100%; height: 100%; max-height: 200px; }
+
+        /* Micro-animaciones planas sutiles */
+        @keyframes floatPlain {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        @keyframes blinkPlain {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .anim-float { animation: floatPlain 3s ease-in-out infinite; }
+        .anim-blink { animation: blinkPlain 1.5s infinite; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Mundo Ilustrado Plano (Estilo Vector Art)</h1>
+        <p>Ilustraciones 2D minimalistas y limpias, sin sombras complejas ni 3D forzado. Diseñadas puramente con formas geométricas bajo la paleta Deep Tech para armar comerciales, páginas web o explicativos.</p>
+    </div>
+
+    <div class="grid">
+        
+        <!-- 1. PERSONA / DESARROLLADOR -->
+        <div class="card">
+            <div class="preview">
+                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fondo plano interno -->
+                    <rect width="200" height="150" fill="#ffffff" rx="8"/>
+                    <!-- Escritorio -->
+                    <rect x="40" y="100" width="120" height="8" fill="#0f172a" rx="2"/>
+                    <rect x="90" y="108" width="20" height="25" fill="#60a5fa" rx="2"/>
+                    <!-- Computadora Plana -->
+                    <rect x="70" y="60" width="60" height="40" fill="#0f172a" rx="4"/>
+                    <rect x="74" y="64" width="52" height="32" fill="#38bdf8" rx="2"/>
+                    <!-- Líneas de código en pantalla -->
+                    <line x1="80" y1="72" x2="100" y2="72" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="80" y1="80" x2="110" y2="80" stroke="#1e3a8a" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="80" y1="88" x2="95" y2="88" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Persona (Cabeza y hombros) -->
+                    <circle cx="100" cy="42" r="12" fill="#2563eb"/>
+                    <path d="M75 100 C 75 80, 125 80, 125 100 Z" fill="#1e3a8a"/>
+                    <!-- Destello o idea flotando -->
+                    <circle cx="135" cy="35" r="4" fill="#38bdf8" class="anim-float"/>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>👨‍💻 Desarrollador / Usuario</h3>
+                <p>Personaje minimalista en estilo plano interactuando con su estación de trabajo. Ideal para mostrar la faceta humana detrás de los sistemas.</p>
+            </div>
+        </div>
+
+        <!-- 2. HOJA DE CÁLCULO / DATOS -->
+        <div class="card">
+            <div class="preview">
+                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="150" fill="#ffffff" rx="8"/>
+                    <!-- Ventana de Tabla / Excel -->
+                    <rect x="45" y="30" width="110" height="90" rx="6" fill="#f8fafc" stroke="#60a5fa" stroke-width="2"/>
+                    <rect x="45" y="30" width="110" height="20" fill="#2563eb" rx="6"/>
+                    <circle cx="55" cy="40" r="3" fill="#ffffff"/>
+                    <circle cx="65" cy="40" r="3" fill="#38bdf8"/>
+                    <!-- Celdas y gráfica plana -->
+                    <rect x="55" y="60" width="25" height="12" rx="2" fill="#e2e8f0"/>
+                    <rect x="85" y="60" width="60" height="12" rx="2" fill="#e2e8f0"/>
+                    <rect x="55" y="78" width="25" height="12" rx="2" fill="#e2e8f0"/>
+                    <rect x="85" y="78" width="40" height="12" rx="2" fill="#38bdf8"/>
+                    <rect x="55" y="96" width="25" height="12" rx="2" fill="#e2e8f0"/>
+                    <rect x="85" y="96" width="50" height="12" rx="2" fill="#60a5fa"/>
+                    <!-- Gráfico de barras ascendente superpuesto -->
+                    <rect x="135" y="75" width="8" height="33" fill="#1e3a8a" rx="1"/>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>📊 Hojas de Cálculo y Métricas</h3>
+                <p>Representación limpia de datos tabulares y reportes financieros. Perfecto para ilustrar la administración, control y contabilidad de un negocio.</p>
+            </div>
+        </div>
+
+        <!-- 3. DESARROLLO WEB / CÓDIGO -->
+        <div class="card">
+            <div class="preview">
+                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="150" fill="#ffffff" rx="8"/>
+                    <!-- Editor de Código UI -->
+                    <rect x="30" y="35" width="140" height="80" rx="6" fill="#0f172a"/>
+                    <circle cx="45" cy="47" r="3" fill="#ef4444"/>
+                    <circle cx="55" cy="47" r="3" fill="#f59e0b"/>
+                    <circle cx="65" cy="47" r="3" fill="#10b981"/>
+                    <!-- Símbolos de código plano -->
+                    <text x="50" y="75" font-family="monospace" font-size="14" fill="#38bdf8">&lt;/&gt;</text>
+                    <line x1="80" y1="70" x2="130" y2="70" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="50" y1="95" x2="110" y2="95" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="50" y1="105" x2="90" y2="105" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+                    <!-- Cursor parpadeante -->
+                    <rect x="95" y="97" width="2" height="10" fill="#38bdf8" class="anim-blink"/>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>💻 Desarrollo Web y Software</h3>
+                <p>El núcleo de Aurasys. Etiquetas de código y terminales gráficas simplificadas para ilustrar programación, apps y arquitectura digital.</p>
+            </div>
+        </div>
+
+        <!-- 4. HERRAMIENTAS Y ENGRANES (SISTEMAS) -->
+        <div class="card">
+            <div class="preview">
+                <svg viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="150" fill="#ffffff" rx="8"/>
+                    <!-- Tuerca / Engrane Principal Plano -->
+                    <g transform="translate(100, 75)">
+                        <circle cx="0" cy="0" r="30" fill="none" stroke="#2563eb" stroke-width="12"/>
+                        <circle cx="0" cy="0" r="12" fill="#38bdf8"/>
+                        <!-- Herramienta cruzada (Llave inglesa) -->
+                        <path d="M-40 -40 L-15 -15" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="-42" cy="-42" r="6" fill="#1e3a8a"/>
+                    </g>
+                    <!-- Pequeños nodos flotantes -->
+                    <circle cx="45" cy="50" r="6" fill="#60a5fa" class="anim-float"/>
+                    <circle cx="155" cy="100" r="8" fill="#38bdf8" class="anim-float" style="animation-delay: 1s;"/>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>⚙️ Herramientas y Automatización</h3>
+                <p>Engranajes y llaves mecánicas simplificadas en 2D. Ideales para representar mantenimiento, optimización de procesos y configuración de sistemas.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

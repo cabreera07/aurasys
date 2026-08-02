@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Identidad Visual Premium</title>
+    <!-- Cambio a tipografía Outfit: Muy moderna, fluida y con toques juveniles pero de alta gama -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f0f4f8;
+            /* Fondo premium más profundo y sofisticado */
+            --card-bg: linear-gradient(145deg, #070e1c, #0d1b2a);
+            --c-cyan: #00f2fe;
+            --c-blue: #4facfe;
+            --c-white: #ffffff;
+            --font-main: 'Outfit', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-page);
+            font-family: var(--font-main);
+            color: #1e293b;
+            padding: 40px 20px;
+        }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 2.8rem; font-weight: 800; color: #070e1c; letter-spacing: -1.5px; }
+        .header p { color: #64748b; margin-top: 10px; font-size: 1.1rem; max-width: 700px; margin-inline: auto; font-weight: 300; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .preview {
+            background: var(--card-bg);
+            height: 260px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Brillo sutil de fondo para el toque premium */
+        .preview::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.1) 0%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .info { padding: 30px; }
+        .info h3 { font-size: 1.2rem; color: #070e1c; margin-bottom: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        .info p { font-size: 0.95rem; color: #475569; line-height: 1.6; font-weight: 300; }
+
+        /* ANIMACIONES Y CLASES SVG GLOBALES */
+        /* Animación más orgánica: escalar desde el centro (y-axis) */
+        .bar { transform-origin: center; transform: scaleY(0.2); }
+        .b1 { animation: fluidWave 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 0.0s; }
+        .b2 { animation: fluidWave 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 0.15s; }
+        .b3 { animation: fluidWave 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 0.3s; }
+        .b4 { animation: fluidWave 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 0.15s; }
+        .b5 { animation: fluidWave 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate 0.0s; }
+
+        .text-aura { font-family: var(--font-main); font-weight: 800; font-size: 48px; fill: var(--c-white); letter-spacing: -1px; }
+        .text-sys { font-family: var(--font-main); font-weight: 300; font-size: 48px; fill: url(#cyanGrad); }
+        
+        .anim-slide { opacity: 0; animation: slideIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards; }
+        .anim-fade { opacity: 0; animation: fadeIn 1.2s ease 0.5s forwards; }
+
+        @keyframes fluidWave { 
+            0% { transform: scaleY(0.15); opacity: 0.6; } 
+            100% { transform: scaleY(1); opacity: 1; filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6)); } 
+        }
+        @keyframes slideIn { 0% { transform: translateX(-30px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+        @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Aurasys Premium</h1>
+        <p>Evolución de diseño: Detalles finos, animaciones orgánicas y tipografía fluida.</p>
+    </div>
+
+    <!-- Definición de gradientes reutilizables para todos los SVGs -->
+    <svg width="0" height="0" style="position:absolute;">
+        <defs>
+            <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f2fe" />
+                <stop offset="100%" stop-color="#4facfe" />
+            </linearGradient>
+            <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="#e2e8f0" />
+            </linearGradient>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="grid">
+        
+        <!-- 1. LOGOTIPO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="260" height="100" viewBox="0 0 260 100">
+                    <g class="anim-fade" transform="translate(30, 65)">
+                        <text x="0" y="0" class="text-aura">Aura</text>
+                        <text x="115" y="0" class="text-sys">sys</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Logotipo</h3>
+                <p>La nueva tipografía (Outfit) es geométrica pero con curvas suaves. "Aura" tiene un peso fuerte e imponente, mientras que "sys" es ligero y brillante, creando un contraste muy elegante y juvenil.</p>
+            </div>
+        </div>
+
+        <!-- 2. ISOTIPO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <!-- Ondas centradas (Y = 0) para expansión fluida -->
+                    <g transform="translate(47, 75)">
+                        <rect class="bar b1" x="0" y="-12" width="6" height="24" rx="3" fill="url(#cyanGrad)"/>
+                        <rect class="bar b2" x="12" y="-22" width="6" height="44" rx="3" fill="url(#cyanGrad)"/>
+                        <rect class="bar b3" x="24" y="-32" width="6" height="64" rx="3" fill="url(#cyanGrad)"/>
+                        <rect class="bar b4" x="36" y="-22" width="6" height="44" rx="3" fill="url(#cyanGrad)"/>
+                        <rect class="bar b5" x="48" y="-12" width="6" height="24" rx="3" fill="url(#cyanGrad)"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Isotipo</h3>
+                <p>Las barras ahora son más delgadas, con puntas totalmente redondeadas (cápsulas) y un degradado cyan. La animación crece desde el <strong>centro</strong> (no desde abajo), simulando un latido o frecuencia de audio muy fluido.</p>
+            </div>
+        </div>
+
+        <!-- 3. IMAGOTIPO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="320" height="120" viewBox="0 0 320 120">
+                    <g transform="translate(20, 20)">
+                        <!-- Icono -->
+                        <g transform="translate(0, 40)">
+                            <rect class="bar b1" x="0" y="-12" width="6" height="24" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b2" x="12" y="-22" width="6" height="44" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b3" x="24" y="-32" width="6" height="64" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b4" x="36" y="-22" width="6" height="44" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b5" x="48" y="-12" width="6" height="24" rx="3" fill="url(#cyanGrad)"/>
+                        </g>
+                        <!-- Texto -->
+                        <g class="anim-slide" transform="translate(75, 54)">
+                            <text x="0" y="0" class="text-aura">Aura</text>
+                            <text x="115" y="0" class="text-sys">sys</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Imagotipo</h3>
+                <p>El espaciado entre el isotipo y el texto se ha perfeccionado. La combinación del pulso de la onda y la limpieza de la fuente transmite una vibra de "Startup Tecnológica Top".</p>
+            </div>
+        </div>
+
+        <!-- 4. ISOLOGO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="250" height="150" viewBox="0 0 250 150">
+                    <g transform="translate(125, 75)">
+                        <!-- Anillo premium con resplandor en lugar de fondo sólido -->
+                        <circle class="anim-fade" cx="0" cy="0" r="60" fill="none" stroke="url(#cyanGrad)" stroke-width="1.5" opacity="0.3" filter="url(#glow)"/>
+                        <circle class="anim-fade" cx="0" cy="0" r="50" fill="rgba(79, 172, 254, 0.05)" stroke="url(#cyanGrad)" stroke-width="0.5"/>
+                        
+                        <!-- Ondas integradas -->
+                        <g transform="translate(-27, 25)">
+                            <rect class="bar b1" x="0" y="-12" width="6" height="24" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b2" x="12" y="-22" width="6" height="44" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b3" x="24" y="-32" width="6" height="64" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b4" x="36" y="-22" width="6" height="44" rx="3" fill="url(#cyanGrad)"/>
+                            <rect class="bar b5" x="48" y="-12" width="6" height="24" rx="3" fill="url(#cyanGrad)"/>
+                        </g>
+
+                        <!-- Texto centrado cortando el diseño -->
+                        <g class="anim-slide" text-anchor="middle" transform="translate(0, -5)">
+                            <!-- Máscara trasera para dar profundidad -->
+                            <text x="-25" y="0" class="text-aura" stroke="#070e1c" stroke-width="8" stroke-linejoin="round" style="font-size: 32px;">Aura</text>
+                            <text x="35" y="0" class="text-sys" stroke="#070e1c" stroke-width="8" stroke-linejoin="round" style="font-size: 32px;">sys</text>
+                            
+                            <!-- Texto frontal ajustado en tamaño para encajar en el anillo -->
+                            <text x="-25" y="0" class="text-aura" style="font-size: 32px;">Aura</text>
+                            <text x="35" y="0" class="text-sys" style="font-size: 32px;">sys</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Isologo</h3>
+                <p>Se reemplazó el círculo sólido y pesado por un sistema de <strong>anillos de luz sutiles</strong> con efecto <em>glow</em>. El texto ahora se superpone en el centro superior, interactuando físicamente con la onda debajo.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

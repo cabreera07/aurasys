@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Design System Vol. 3 (50 Assets)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #070b14;
+            --c-dark: #0f172a;
+            --c-blue1: #1e3a8a;
+            --c-blue2: #2563eb;
+            --c-blue3: #60a5fa;
+            --c-cyan: #38bdf8;
+            --c-white: #ffffff;
+            --text-main: #94a3b8;
+        }
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--c-white);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--c-white);
+        }
+        .header p {
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .section-title {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            font-size: 1.2rem;
+            color: var(--c-cyan);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .icon-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(96, 165, 250, 0.1);
+            border-radius: 12px;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+            padding-top: 10px;
+        }
+        .icon-card:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--c-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.1);
+        }
+        .icon-card svg {
+            width: 45px;
+            height: 45px;
+        }
+        .icon-label {
+            position: absolute;
+            bottom: 8px;
+            font-size: 0.55rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            width: 95%;
+        }
+        
+        /* Animaciones */
+        @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.8; } 100% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 5px var(--c-cyan)); } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-3px); } 100% { transform: translateY(0px); } }
+        @keyframes slide { 0% { transform: translateX(-2px); } 100% { transform: translateX(2px); } }
+        
+        .anim-pulse { animation: pulse 2s infinite alternate; transform-origin: center; }
+        .anim-spin { animation: spin 8s linear infinite; transform-origin: center; }
+        .anim-float { animation: float 3s ease-in-out infinite; }
+        .anim-slide { animation: slide 1s ease-in-out infinite alternate; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Librería Comercial: Aurasys (Vol. 3)</h1>
+        <p>50 componentes visuales diseñados para uso comercial puro: slogans, e-commerce, contacto corporativo, creación de contenido y sorpresas conceptuales de la marca.</p>
+    </div>
+<div class="section-title">11. Tipografía y Slogans</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="28" font-family="Poppins" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">AURA</text><text x="32" y="44" font-family="Poppins" font-size="16" font-weight="300" fill="#38bdf8" text-anchor="middle">SYS</text>
+            </svg>
+            <span class="icon-label">AuraSys Apilado</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="38" font-family="Poppins" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">AURA<tspan fill="#38bdf8" font-weight="300">SYS</tspan></text>
+            </svg>
+            <span class="icon-label">AuraSys H</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="cp" d="M 16,32 A 16,16 0 1,1 48,32 A 16,16 0 1,1 16,32" fill="none"/><text font-size="5" fill="#38bdf8" font-family="Poppins" font-weight="600" letter-spacing="1.2"><textPath href="#cp">DALE ESTRUCTURA A TUS IDEAS · </textPath></text>
+            </svg>
+            <span class="icon-label">Slogan Circular</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="26" width="56" height="12" rx="2" fill="#1e3a8a"/><text x="32" y="34" font-family="Poppins" font-size="6" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="1">DALE ESTRUCTURA</text>
+            </svg>
+            <span class="icon-label">Caja Slogan</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="42" font-family="Poppins" font-size="32" font-weight="800" fill="#38bdf8" text-anchor="middle">A</text>
+            </svg>
+            <span class="icon-label">Mono A</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="38" font-family="Poppins" font-size="20" font-weight="300" fill="#60a5fa" text-anchor="middle">sys</text>
+            </svg>
+            <span class="icon-label">Mono Sys</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="36" font-family="Poppins" font-size="10" font-weight="800" fill="#38bdf8" text-anchor="middle" letter-spacing="2">IDEAS</text>
+            </svg>
+            <span class="icon-label">Tag Ideas</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="22" stroke="#38bdf8" stroke-width="2" fill="none"/><text x="32" y="38" font-family="Poppins" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">AS</text>
+            </svg>
+            <span class="icon-label">Sello AS</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="38" font-family="Poppins" font-size="18" font-weight="800" fill="#fff" text-anchor="middle" class="anim-pulse">AURA</text>
+            </svg>
+            <span class="icon-label">Aura Glow</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="32" y="36" font-family="Poppins" font-size="8" fill="#60a5fa" text-anchor="middle">aurasys.com</text>
+            </svg>
+            <span class="icon-label">Dominio Web</span>
+        </div></div><div class="section-title">12. E-Commerce y Ventas</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16 L20 16 L26 40 L48 40 L52 24 L24 24" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="28" cy="48" r="3" fill="#38bdf8"/><circle cx="44" cy="48" r="3" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Carrito</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 32 L32 16 L48 16 L48 32 L32 48 Z" fill="none" stroke="#38bdf8" stroke-width="3"/><circle cx="40" cy="24" r="3" fill="#60a5fa"/>
+            </svg>
+            <span class="icon-label">Etiqueta</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="20" width="40" height="24" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><rect x="12" y="28" width="40" height="4" fill="#2563eb"/><rect x="18" y="36" width="8" height="4" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Tarjeta</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 24 C 24 16, 40 16, 40 24" fill="none" stroke="#38bdf8" stroke-width="3"/><rect x="16" y="24" width="32" height="28" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Bolsa</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#38bdf8" stroke-width="3"/><text x="32" y="37" font-family="Poppins" font-size="14" font-weight="800" fill="#60a5fa" text-anchor="middle">A</text>
+            </svg>
+            <span class="icon-label">Token A</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="14" y="20" width="36" height="24" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M40 28 L50 28 L50 36 L40 36 Z" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Billetera</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="32,16 52,24 52,44 32,52 12,44 12,24" fill="none" stroke="#60a5fa" stroke-width="3"/><polyline points="12,24 32,32 52,24" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="32" y1="32" x2="32" y2="52" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Caja Envío</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 12 L48 12 L48 52 L40 48 L32 52 L24 48 L16 52 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="24" y1="24" x2="40" y2="24" stroke="#38bdf8" stroke-width="2"/><line x1="24" y1="32" x2="32" y2="32" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Factura</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 24 L52 24 L48 48 L16 48 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M16 24 L20 16 L44 16 L48 24" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Kiosko</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 40 L28 40 L36 32 L28 24 L12 24" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M52 40 L36 40 L28 32 L36 24 L52 24" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Trato B2B</span>
+        </div></div><div class="section-title">13. Redes Sociales y Contacto</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 20 L48 20 L48 40 L36 40 L24 48 L24 40 L16 40 Z" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Chat Bubble</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="20" width="40" height="24" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><polyline points="12,20 32,32 52,20" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Correo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#60a5fa" stroke-width="3"/><ellipse cx="32" cy="32" rx="6" ry="16" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="16" y1="32" x2="48" y2="32" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Web Mundo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="12" width="24" height="40" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="28" y1="16" x2="36" y2="16" stroke="#38bdf8" stroke-width="2"/><circle cx="32" cy="46" r="2" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Móvil Call</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 12 C 24 12, 20 18, 20 24 C 20 34, 32 52, 32 52 C 32 52, 44 34, 44 24 C 44 18, 40 12, 32 12 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="32" cy="24" r="4" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Ubicación</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="22" r="8" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M16 48 C 16 38, 48 38, 48 48" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Usuario</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="22" r="6" fill="none" stroke="#60a5fa" stroke-width="2"/><path d="M12 40 C 12 34, 36 34, 36 40" fill="none" stroke="#60a5fa" stroke-width="2"/><circle cx="44" cy="26" r="5" fill="none" stroke="#38bdf8" stroke-width="2"/><path d="M36 44 C 36 38, 52 38, 52 44" fill="none" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Equipo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 28 A 6 6 0 0 0 24 40 L 32 40" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M40 36 A 6 6 0 0 0 40 24 L 32 24" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="28" y1="32" x2="36" y2="32" stroke="#fff" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Enlace Link</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 16 C 24 16, 20 22, 20 32 L 16 40 L 48 40 L 44 32 C 44 22, 40 16, 32 16 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M28 44 A 4 4 0 0 0 36 44" fill="none" stroke="#38bdf8" stroke-width="3" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Campana Notif.</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 28 L 16 28 L 16 48 L 24 48 M24 48 L 40 48 C 44 48, 48 44, 48 40 L 48 32 C 48 28, 44 28, 40 28 L 32 28 L 32 16 C 32 12, 24 16, 24 28 Z" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Me Gusta</span>
+        </div></div><div class="section-title">14. Formatos de Contenido</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="32" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><polygon points="28,24 40,32 28,40" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Video HD</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="28" y="16" width="8" height="16" rx="4" fill="none" stroke="#38bdf8" stroke-width="3"/><path d="M20 28 A 12 12 0 0 0 44 28" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="32" y1="40" x2="32" y2="48" stroke="#38bdf8" stroke-width="3"/><line x1="24" y1="48" x2="40" y2="48" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Podcast Audio</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="12" width="32" height="40" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="24" y1="24" x2="40" y2="24" stroke="#38bdf8" stroke-width="2"/><line x1="24" y1="32" x2="40" y2="32" stroke="#38bdf8" stroke-width="2"/><line x1="24" y1="40" x2="32" y2="40" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Artículos</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="32" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="24" cy="26" r="3" fill="#38bdf8"/><path d="M12 40 L24 28 L36 40 L44 32 L52 40" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Galería IMG</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="16,48 16,16" stroke="#60a5fa" stroke-width="3"/><polyline points="16,48 48,48" stroke="#60a5fa" stroke-width="3"/><polyline points="20,40 28,28 36,36 44,20" fill="none" stroke="#38bdf8" stroke-width="3"/><circle cx="44" cy="20" r="3" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Gráfico Data</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 36 C 16 36, 16 28, 24 28 C 24 20, 40 20, 40 28 C 48 28, 48 36, 44 36 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="32" y1="28" x2="32" y2="44" stroke="#38bdf8" stroke-width="3"/><polyline points="26,38 32,44 38,38" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Descarga Cloud</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="20" width="32" height="28" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="24" y1="16" x2="24" y2="24" stroke="#38bdf8" stroke-width="3"/><line x1="40" y1="16" x2="40" y2="24" stroke="#38bdf8" stroke-width="3"/><line x1="16" y1="32" x2="48" y2="32" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Evento Cal</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="32" y1="24" x2="32" y2="32" stroke="#38bdf8" stroke-width="3"/><line x1="32" y1="32" x2="40" y2="32" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Tiempo Rápido</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 24 C 24 16, 40 16, 40 24 C 40 32, 36 36, 36 40 L 28 40 C 28 36, 24 32, 24 24 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="30" y1="46" x2="34" y2="46" stroke="#38bdf8" stroke-width="3"/><line x1="32" y1="12" x2="32" y2="8" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Blog Idea</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="24,24 16,32 24,40" fill="none" stroke="#60a5fa" stroke-width="3"/><polyline points="40,24 48,32 40,40" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="36" y1="20" x2="28" y2="44" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Snippet Código</span>
+        </div></div><div class="section-title">15. Sorpresas / Easter Eggs de Marca</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 32 C 12 32, 20 20, 32 20 C 44 20, 52 32, 52 32 C 52 32, 44 44, 32 44 C 20 44, 12 32, 12 32 Z" fill="none" stroke="#60a5fa" stroke-width="2"/><circle cx="32" cy="32" r="6" stroke="#38bdf8" stroke-width="2" fill="none"/><circle cx="32" cy="32" r="2" fill="#fff" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Ojo IA</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="14" fill="none" stroke="#1e3a8a" stroke-width="4"/><circle cx="32" cy="32" r="10" stroke="#2563eb" stroke-width="2" stroke-dasharray="4 4" class="anim-spin" fill="none"/><circle cx="32" cy="32" r="4" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Reactor Core</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="32" cy="48" rx="16" ry="4" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M20 48 L32 20 L44 48" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="2 2"/><circle cx="32" cy="20" r="3" fill="#fff" class="anim-float"/>
+            </svg>
+            <span class="icon-label">Holograma</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="24" height="24" fill="none" stroke="#1e3a8a" stroke-width="2"/><rect x="28" y="12" width="24" height="24" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="20" y1="20" x2="28" y2="12" stroke="#60a5fa" stroke-width="2"/><line x1="44" y1="20" x2="52" y2="12" stroke="#60a5fa" stroke-width="2"/><line x1="20" y1="44" x2="28" y2="36" stroke="#60a5fa" stroke-width="2"/><line x1="44" y1="44" x2="52" y2="36" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Cubo 4D</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 16 C 40 24, 40 40, 24 48" fill="none" stroke="#60a5fa" stroke-width="2"/><path d="M40 16 C 24 24, 24 40, 40 48" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="28" y1="24" x2="36" y2="24" stroke="#1e3a8a" stroke-width="2"/><line x1="28" y1="40" x2="36" y2="40" stroke="#1e3a8a" stroke-width="2"/><circle cx="32" cy="32" r="2" fill="#fff"/>
+            </svg>
+            <span class="icon-label">ADN Aurasys</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 16 C 40 24, 40 40, 40 40 L 24 40 C 24 40, 24 24, 32 16 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M24 40 L 20 48 L 28 40" fill="none" stroke="#38bdf8" stroke-width="2"/><path d="M40 40 L 44 48 L 36 40" fill="none" stroke="#38bdf8" stroke-width="2"/><circle cx="32" cy="28" r="3" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Lanzamiento</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 44 L16 28 L24 36 L32 20 L40 36 L48 28 L48 44 Z" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="16" y1="48" x2="48" y2="48" stroke="#60a5fa" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Corona Líder</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="32,16 48,24 32,48 16,24" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="16" y1="24" x2="48" y2="24" stroke="#60a5fa" stroke-width="2"/><polyline points="24,24 32,48 40,24" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Diamante</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 32 C 16 32, 16 24, 22 24 C 28 24, 36 40, 42 40 C 48 40, 48 32, 42 32 C 36 32, 28 16, 22 16" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="32" cy="32" r="2" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Bucle Infinito</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="32" cy="32" rx="12" ry="24" fill="none" stroke="#38bdf8" stroke-width="3" class="anim-pulse"/><ellipse cx="32" cy="32" rx="6" ry="16" fill="none" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Portal Web</span>
+        </div></div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Variaciones de Marca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f8fafc;
+        }
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            color: #1e293b;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+        }
+        .preview {
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .info {
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            color: #0f172a;
+        }
+        .info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* ANIMACIONES SVG */
+        .bar { transform-origin: bottom; transform: scaleY(0.1); }
+        .w1 { animation: wave 1s ease-in-out infinite alternate 0.0s; }
+        .w2 { animation: wave 1s ease-in-out infinite alternate 0.2s; }
+        .w3 { animation: wave 1s ease-in-out infinite alternate 0.4s; }
+        .w4 { animation: wave 1s ease-in-out infinite alternate 0.2s; }
+        .w5 { animation: wave 1s ease-in-out infinite alternate 0.0s; }
+        
+        @keyframes wave { 0% { transform: scaleY(0.2); } 100% { transform: scaleY(1); } }
+
+        /* VARIABLES DE COLOR POR VARIANTE */
+        
+        /* 1. Principal (Oscuro) */
+        .v-main .preview { background: #0f172a; }
+        .v-main .wave-1, .v-main .wave-5 { fill: #2563eb; }
+        .v-main .wave-2, .v-main .wave-4 { fill: #60a5fa; }
+        .v-main .wave-3 { fill: #38bdf8; }
+        .v-main .c-aura { fill: #ffffff; }
+        .v-main .c-sys { fill: #38bdf8; }
+        .v-main .c-tagline { fill: #94a3b8; }
+
+        /* 2. Positivo (Fondo Blanco) */
+        .v-light .preview { background: #ffffff; }
+        /* Usamos azules ligeramente más oscuros para que resalten en blanco */
+        .v-light .wave-1, .v-light .wave-5 { fill: #1e3a8a; } 
+        .v-light .wave-2, .v-light .wave-4 { fill: #2563eb; }
+        .v-light .wave-3 { fill: #38bdf8; }
+        .v-light .c-aura { fill: #0f172a; }
+        .v-light .c-sys { fill: #2563eb; }
+        .v-light .c-tagline { fill: #64748b; }
+
+        /* 3. Monocromo Negro */
+        .v-black .preview { background: #ffffff; }
+        .v-black .wave-1, .v-black .wave-2, .v-black .wave-3, .v-black .wave-4, .v-black .wave-5 { fill: #000000; }
+        .v-black .c-aura { fill: #000000; }
+        .v-black .c-sys { fill: #000000; }
+        .v-black .c-tagline { fill: #000000; }
+
+        /* 4. Monocromo Blanco */
+        .v-white .preview { background: #111827; } /* Fondo oscuro de muestra */
+        .v-white .wave-1, .v-white .wave-2, .v-white .wave-3, .v-white .wave-4, .v-white .wave-5 { fill: #ffffff; }
+        .v-white .c-aura { fill: #ffffff; }
+        .v-white .c-sys { fill: #ffffff; }
+        .v-white .c-tagline { fill: #ffffff; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Usos y Variaciones (Deep Tech)</h1>
+        <p>Aquí tienes tu logotipo con la palabra "Aurasys" unificada y estructurada. Estas son las 4 versiones reglamentarias que toda empresa necesita para cualquier escenario (impresión, fondos oscuros, fondos claros, marcas de agua).</p>
+    </div>
+
+    <div class="grid">
+        
+        <!-- VARIANTE 1: ORIGINAL OSCURA -->
+        <div class="card v-main">
+            <div class="preview">
+                <svg width="350" height="120" viewBox="0 0 350 120">
+                    <g transform="translate(20, 20)">
+                        <g transform="translate(0, 70)">
+                            <rect class="bar w1 wave-1" x="0" y="-20" width="8" height="20" rx="4"/>
+                            <rect class="bar w2 wave-2" x="12" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w3 wave-3" x="24" y="-60" width="8" height="60" rx="4"/>
+                            <rect class="bar w4 wave-4" x="36" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w5 wave-5" x="48" y="-20" width="8" height="20" rx="4"/>
+                        </g>
+                        <g transform="translate(75, 0)">
+                            <!-- Uso de <tspan> para asegurar que "Aurasys" se renderice exactamente junto como una sola palabra -->
+                            <text x="0" y="52" font-size="42px">
+                                <tspan class="c-aura" font-weight="800">Aura</tspan><tspan class="c-sys" font-weight="300">sys</tspan>
+                            </text>
+                            <text class="c-tagline" x="2" y="75" font-weight="400" font-size="13px" letter-spacing="1px">Dale estructura a tus ideas</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>1. Principal (Fondo Oscuro)</h3>
+                <p>La versión original y más impactante. Úsala siempre que tengas fondos oscuros (azul marino, negro o gris carbón). Ideal para modo oscuro en web.</p>
+            </div>
+        </div>
+
+        <!-- VARIANTE 2: POSITIVO (FONDO BLANCO) -->
+        <div class="card v-light">
+            <div class="preview">
+                <svg width="350" height="120" viewBox="0 0 350 120">
+                    <g transform="translate(20, 20)">
+                        <g transform="translate(0, 70)">
+                            <rect class="bar w1 wave-1" x="0" y="-20" width="8" height="20" rx="4"/>
+                            <rect class="bar w2 wave-2" x="12" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w3 wave-3" x="24" y="-60" width="8" height="60" rx="4"/>
+                            <rect class="bar w4 wave-4" x="36" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w5 wave-5" x="48" y="-20" width="8" height="20" rx="4"/>
+                        </g>
+                        <g transform="translate(75, 0)">
+                            <text x="0" y="52" font-size="42px">
+                                <tspan class="c-aura" font-weight="800">Aura</tspan><tspan class="c-sys" font-weight="300">sys</tspan>
+                            </text>
+                            <text class="c-tagline" x="2" y="75" font-weight="400" font-size="13px" letter-spacing="1px">Dale estructura a tus ideas</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>2. A Color (Fondo Blanco/Claro)</h3>
+                <p>Adaptación de los colores azules para que resalten sobre blanco. "Aura" pasa a ser azul marino intenso. Esta es la versión para papelería, documentos PDF y modo claro.</p>
+            </div>
+        </div>
+
+        <!-- VARIANTE 3: MONOCROMO NEGRO -->
+        <div class="card v-black">
+            <div class="preview">
+                <svg width="350" height="120" viewBox="0 0 350 120">
+                    <g transform="translate(20, 20)">
+                        <g transform="translate(0, 70)">
+                            <rect class="bar w1 wave-1" x="0" y="-20" width="8" height="20" rx="4"/>
+                            <rect class="bar w2 wave-2" x="12" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w3 wave-3" x="24" y="-60" width="8" height="60" rx="4"/>
+                            <rect class="bar w4 wave-4" x="36" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w5 wave-5" x="48" y="-20" width="8" height="20" rx="4"/>
+                        </g>
+                        <g transform="translate(75, 0)">
+                            <text x="0" y="52" font-size="42px">
+                                <tspan class="c-aura" font-weight="800">Aura</tspan><tspan class="c-sys" font-weight="300">sys</tspan>
+                            </text>
+                            <text class="c-tagline" x="2" y="75" font-weight="400" font-size="13px" letter-spacing="1px">Dale estructura a tus ideas</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>3. Monocromo Negro</h3>
+                <p>Versión estricta a un solo color. La diferenciación de "Aurasys" se mantiene puramente por el grosor de la letra. Indispensable para sellos, facturas en blanco y negro, o grabados láser.</p>
+            </div>
+        </div>
+
+        <!-- VARIANTE 4: MONOCROMO BLANCO -->
+        <div class="card v-white">
+            <div class="preview">
+                <svg width="350" height="120" viewBox="0 0 350 120">
+                    <g transform="translate(20, 20)">
+                        <g transform="translate(0, 70)">
+                            <rect class="bar w1 wave-1" x="0" y="-20" width="8" height="20" rx="4"/>
+                            <rect class="bar w2 wave-2" x="12" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w3 wave-3" x="24" y="-60" width="8" height="60" rx="4"/>
+                            <rect class="bar w4 wave-4" x="36" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar w5 wave-5" x="48" y="-20" width="8" height="20" rx="4"/>
+                        </g>
+                        <g transform="translate(75, 0)">
+                            <text x="0" y="52" font-size="42px">
+                                <tspan class="c-aura" font-weight="800">Aura</tspan><tspan class="c-sys" font-weight="300">sys</tspan>
+                            </text>
+                            <text class="c-tagline" x="2" y="75" font-weight="400" font-size="13px" letter-spacing="1px">Dale estructura a tus ideas</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>4. Monocromo Blanco (Negativo)</h3>
+                <p>Igual que la versión negra, pero todo en blanco sólido. Se usa como marca de agua sobre fotografías muy recargadas o sobre fondos de colores sólidos donde la versión principal no encaja.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

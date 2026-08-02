@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Design System (50 Assets)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #070b14;
+            --c-dark: #0f172a;
+            --c-blue1: #1e3a8a;
+            --c-blue2: #2563eb;
+            --c-blue3: #60a5fa;
+            --c-cyan: #38bdf8;
+            --c-white: #ffffff;
+            --text-main: #94a3b8;
+        }
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--c-white);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--c-white);
+        }
+        .header p {
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .section-title {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            font-size: 1.2rem;
+            color: var(--c-cyan);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .icon-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(96, 165, 250, 0.1);
+            border-radius: 12px;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .icon-card:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--c-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.1);
+        }
+        .icon-card svg {
+            width: 40px;
+            height: 40px;
+        }
+        .icon-label {
+            position: absolute;
+            bottom: 8px;
+            font-size: 0.55rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Animaciones Globales */
+        @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.8; } 100% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 5px var(--c-cyan)); } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-3px); } 100% { transform: translateY(0px); } }
+        @keyframes wave { 0% { transform: scaleY(0.3); } 100% { transform: scaleY(1); } }
+        
+        .anim-pulse { animation: pulse 2s infinite alternate; }
+        .anim-spin { animation: spin 8s linear infinite; transform-origin: center; }
+        .anim-float { animation: float 3s ease-in-out infinite; }
+        .anim-wave { transform-origin: bottom; animation: wave 1s ease-in-out infinite alternate; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Librería de Assets: Aurasys</h1>
+        <p>50 objetos, símbolos, elementos de interfaz y tipografía diseñados exclusivamente bajo el ecosistema Deep Tech de Aurasys. Listos para usarse en presentaciones, UI, redes sociales y branding secundario.</p>
+    </div>
+
+    <!-- CATEGORÍA 1: ONDAS Y ENERGÍA (1-10) -->
+    <div class="section-title">1. Ondas y Energía Cinética</div>
+    <div class="grid">
+
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="28" y="16" width="8" height="32" rx="4" fill="#38bdf8" class="anim-wave" style="animation-delay: 0s;"/>
+            </svg>
+            <span class="icon-label">Onda Simple</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="24" width="6" height="16" rx="3" fill="#2563eb" class="anim-wave" style="animation-delay: 0.2s;"/><rect x="30" y="14" width="6" height="36" rx="3" fill="#38bdf8" class="anim-wave" style="animation-delay: 0s;"/><rect x="40" y="24" width="6" height="16" rx="3" fill="#2563eb" class="anim-wave" style="animation-delay: 0.2s;"/>
+            </svg>
+            <span class="icon-label">Onda Triple</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 32 Q 21 10 32 32 T 54 32" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Seno</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="14" stroke="#38bdf8" stroke-width="4" stroke-dasharray="4 4" class="anim-spin"/>
+            </svg>
+            <span class="icon-label">Frecuencia</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="20" stroke="#1e3a8a" stroke-width="2"/><circle cx="32" cy="32" r="10" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Pulso Radial</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 48 L26 26 L38 38 L48 16" stroke="#60a5fa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Pico Dinámico</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="30" width="40" height="4" rx="2" fill="#2563eb"/><circle cx="32" cy="32" r="6" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Línea Base</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 10 A 22 22 0 0 1 54 32" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/><path d="M32 54 A 22 22 0 0 1 10 32" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Ciclo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="32" height="32" rx="16" fill="#1e3a8a"/><rect x="24" y="24" width="16" height="16" rx="8" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Núcleo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 32 L22 32 L27 16 L37 48 L42 32 L52 32" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Latido</span>
+        </div></div>
+    <!-- CATEGORÍA 2: ESTRUCTURA Y DATOS (11-20) -->
+    <div class="section-title">2. Estructura y Datos</div>
+    <div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="32" height="32" rx="6" fill="none" stroke="#60a5fa" stroke-width="4"/>
+            </svg>
+            <span class="icon-label">Bloque</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="20" width="32" height="8" rx="2" fill="#2563eb"/><rect x="16" y="36" width="32" height="8" rx="2" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Servidor</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="32,12 50,22 50,42 32,52 14,42 14,22" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Hexágono</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="12" width="16" height="16" rx="4" fill="#1e3a8a"/><rect x="36" y="12" width="16" height="16" rx="4" fill="#2563eb"/><rect x="12" y="36" width="16" height="16" rx="4" fill="#60a5fa"/><rect x="36" y="36" width="16" height="16" rx="4" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Módulos</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 48 L48 48 L32 16 Z" fill="none" stroke="#60a5fa" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Jerarquía</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 24 L52 24 M12 40 L52 40 M24 12 L24 52 M40 12 L40 52" stroke="#1e3a8a" stroke-width="2"/><circle cx="24" cy="24" r="4" fill="#38bdf8"/><circle cx="40" cy="40" r="4" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Grid</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="24" y="12" width="16" height="40" rx="2" fill="#2563eb"/><rect x="12" y="28" width="40" height="8" rx="2" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Cruce</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="24" height="24" rx="4" fill="none" stroke="#60a5fa" stroke-width="4"/><path d="M12 12 L20 20 M52 52 L44 44 M52 12 L44 20 M12 52 L20 44" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Hub</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 24 C 16 12, 48 12, 48 24 C 48 36, 16 36, 16 48 C 16 60, 48 60, 48 48" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Flujo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="32,16 46,24 46,40 32,48 18,40 18,24" fill="#1e3a8a"/><circle cx="32" cy="32" r="4" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Isométrico</span>
+        </div></div>
+    <!-- CATEGORÍA 3: NODOS Y CONEXIONES (21-30) -->
+    <div class="section-title">3. Nodos y Conexiones</div>
+    <div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="8" fill="#38bdf8"/><path d="M32 16 L32 24 M32 40 L32 48 M16 32 L24 32 M40 32 L48 32" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Core</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="32" r="6" fill="#2563eb"/><circle cx="44" cy="32" r="6" fill="#38bdf8"/><line x1="26" y1="32" x2="38" y2="32" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Enlace</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="16" r="5" fill="#38bdf8"/><circle cx="16" cy="42" r="5" fill="#2563eb"/><circle cx="48" cy="42" r="5" fill="#2563eb"/><path d="M32 21 L18 38 M32 21 L46 38 M19 42 L45 42" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Triada</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 22 L42 42 M22 42 L42 22" stroke="#2563eb" stroke-width="2"/><circle cx="22" cy="22" r="4" fill="#38bdf8"/><circle cx="42" cy="42" r="4" fill="#38bdf8"/><circle cx="22" cy="42" r="4" fill="#38bdf8"/><circle cx="42" cy="22" r="4" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Malla</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#1e3a8a" stroke-width="2"/><circle cx="32" cy="16" r="4" fill="#38bdf8"/><circle cx="48" cy="32" r="4" fill="#60a5fa"/><circle cx="32" cy="48" r="4" fill="#2563eb"/><circle cx="16" cy="32" r="4" fill="#60a5fa"/>
+            </svg>
+            <span class="icon-label">Órbita</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="6" fill="#38bdf8"/><path d="M32 12 A 20 20 0 0 1 52 32 M32 52 A 20 20 0 0 1 12 32" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Señal</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="28" y="16" width="8" height="8" rx="2" fill="#60a5fa"/><rect x="28" y="40" width="8" height="8" rx="2" fill="#60a5fa"/><line x1="32" y1="24" x2="32" y2="40" stroke="#38bdf8" stroke-width="2" stroke-dasharray="2 2"/>
+            </svg>
+            <span class="icon-label">Dato</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="4" fill="#ffffff"/><circle cx="32" cy="32" r="12" fill="none" stroke="#38bdf8" stroke-width="2"/><circle cx="32" cy="32" r="22" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Anillos</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 32 C 12 12, 32 12, 32 32 C 32 52, 52 52, 52 32" fill="none" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Trayecto</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="16" y1="32" x2="48" y2="32" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="8" fill="#38bdf8" class="anim-float"/>
+            </svg>
+            <span class="icon-label">Switch</span>
+        </div></div>
+    <!-- CATEGORÍA 4: ELEMENTOS TIPOGRÁFICOS Y BADGES (31-40) -->
+    <div class="section-title">4. Símbolos Tipográficos y Badges</div>
+    <div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="20" width="40" height="24" rx="4" fill="#1e3a8a"/><text x="32" y="36" fill="#ffffff" font-size="12px" font-family="Poppins" font-weight="800" text-anchor="middle">AURA</text>
+            </svg>
+            <span class="icon-label">Badge Aura</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="20" width="32" height="24" rx="12" fill="none" stroke="#38bdf8" stroke-width="2"/><text x="32" y="35" fill="#38bdf8" font-size="11px" font-family="Poppins" font-weight="600" text-anchor="middle">SYS</text>
+            </svg>
+            <span class="icon-label">Píldora Sys</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="#2563eb"/><text x="32" y="38" fill="#ffffff" font-size="16px" font-family="Poppins" font-weight="800" text-anchor="middle">A</text>
+            </svg>
+            <span class="icon-label">Avatar A</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#60a5fa" stroke-width="3"/><text x="32" y="38" fill="#60a5fa" font-size="16px" font-family="Poppins" font-weight="600" text-anchor="middle">S</text>
+            </svg>
+            <span class="icon-label">Avatar S</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="24" width="40" height="16" rx="2" fill="#0f172a" stroke="#1e3a8a" stroke-width="2"/><text x="32" y="35" fill="#64748b" font-size="9px" font-family="Poppins" font-weight="800" text-anchor="middle" letter-spacing="1px">IDEAS</text>
+            </svg>
+            <span class="icon-label">Tag Ideas</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16 L52 16 L52 48 L12 48 Z" fill="#2563eb"/><text x="32" y="36" fill="#ffffff" font-size="14px" font-family="Poppins" font-weight="800" text-anchor="middle">V1.0</text>
+            </svg>
+            <span class="icon-label">Versión</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="32" height="32" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/><text x="32" y="38" fill="#38bdf8" font-size="18px" font-family="Poppins" font-weight="800" text-anchor="middle">{ }</text>
+            </svg>
+            <span class="icon-label">Código</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="18" fill="#1e3a8a"/><path d="M26 38 L32 24 L38 38" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Delta</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="24" width="20" height="16" rx="4" fill="#ffffff"/><rect x="32" y="24" width="20" height="16" rx="4" fill="#38bdf8"/><text x="22" y="35" fill="#0f172a" font-size="10px" font-family="Poppins" font-weight="800" text-anchor="middle">A</text><text x="42" y="35" fill="#ffffff" font-size="10px" font-family="Poppins" font-weight="600" text-anchor="middle">S</text>
+            </svg>
+            <span class="icon-label">Split Tag</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="32,12 50,32 32,52 14,32" fill="none" stroke="#60a5fa" stroke-width="2"/><text x="32" y="36" fill="#ffffff" font-size="12px" font-family="Poppins" font-weight="800" text-anchor="middle">AS</text>
+            </svg>
+            <span class="icon-label">Diamante AS</span>
+        </div></div>
+    <!-- CATEGORÍA 5: INTERFAZ Y ACCIÓN (UI) (41-50) -->
+    <div class="section-title">5. Interfaz y Acción (UI)</div>
+    <div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 16 L40 32 L24 48" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Chevron</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="14" y="24" width="36" height="16" rx="8" fill="#1e3a8a"/><circle cx="42" cy="32" r="6" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Toggle</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M28 24 L40 32 L28 40 Z" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Play</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="14" height="14" rx="4" fill="#2563eb"/><rect x="34" y="16" width="14" height="14" rx="4" fill="#2563eb"/><rect x="16" y="34" width="14" height="14" rx="4" fill="#2563eb"/><rect x="34" y="34" width="14" height="14" rx="4" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Menú App</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 32 L28 44 L48 20" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Check</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 24 L32 16 L44 24 M20 40 L32 48 L44 40" fill="none" stroke="#60a5fa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Expansor</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="24" height="24" rx="4" fill="none" stroke="#2563eb" stroke-width="3"/><path d="M28 28 L36 36 M36 28 L28 36" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span class="icon-label">Cerrar</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="14" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="32" cy="22" r="3" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Selector</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 32 L48 32 M40 24 L48 32 L40 40" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="icon-label">Flecha</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="40" width="8" height="8" rx="2" fill="#60a5fa"/><rect x="28" y="28" width="8" height="20" rx="2" fill="#2563eb"/><rect x="40" y="16" width="8" height="32" rx="2" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Métricas</span>
+        </div>
+    </div>
+</body>
+</html>

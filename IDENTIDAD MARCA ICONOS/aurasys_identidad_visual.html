@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Identidad Visual Completa (Deep Tech)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f8fafc;
+            --card-bg: linear-gradient(135deg, #0f172a, #1e3a8a);
+            --c-dark: #0f172a;
+            --c-blue1: #2563eb;
+            --c-blue2: #60a5fa;
+            --c-blue3: #38bdf8;
+            --c-white: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Poppins', sans-serif;
+            color: #1e293b;
+            padding: 40px 20px;
+        }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 2.5rem; font-weight: 800; color: #0f172a; letter-spacing: -1px; }
+        .header p { color: #64748b; margin-top: 10px; font-size: 1.1rem; max-width: 700px; margin-inline: auto; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+        .preview {
+            background: var(--card-bg);
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .info { padding: 25px; }
+        .info h3 { font-size: 1.4rem; color: #0f172a; margin-bottom: 8px; font-weight: 800; text-transform: uppercase; }
+        .info p { font-size: 0.95rem; color: #475569; line-height: 1.5; }
+
+        /* ANIMACIONES Y CLASES SVG GLOBALES */
+        .bar { transform-origin: bottom; transform: scaleY(0.1); }
+        .b1 { animation: wave 1s ease-in-out infinite alternate 0.0s; fill: var(--c-blue1); }
+        .b2 { animation: wave 1s ease-in-out infinite alternate 0.2s; fill: var(--c-blue2); }
+        .b3 { animation: wave 1s ease-in-out infinite alternate 0.4s; fill: var(--c-blue3); }
+        .b4 { animation: wave 1s ease-in-out infinite alternate 0.2s; fill: var(--c-blue2); }
+        .b5 { animation: wave 1s ease-in-out infinite alternate 0.0s; fill: var(--c-blue1); }
+
+        .text-aura { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 42px; fill: var(--c-white); }
+        .text-sys { font-family: 'Poppins', sans-serif; font-weight: 300; font-size: 42px; fill: var(--c-blue3); }
+        
+        .anim-slide { opacity: 0; animation: slideIn 0.8s ease 0.5s forwards; }
+        .anim-fade { opacity: 0; animation: fadeIn 1s ease 0.5s forwards; }
+
+        @keyframes wave { 0% { transform: scaleY(0.2); } 100% { transform: scaleY(1); } }
+        @keyframes slideIn { 0% { transform: translateX(-20px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+        @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Sistema de Marca: Aurasys (Deep Tech)</h1>
+        <p>Basado en tu elección de color y la estructura de identidad visual solicitada, aquí tienes las 4 variantes de tu marca generadas en formato SVG animado puro.</p>
+    </div>
+
+    <div class="grid">
+        
+        <!-- 1. LOGOTIPO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="250" height="100" viewBox="0 0 250 100">
+                    <g class="anim-fade" transform="translate(30, 65)">
+                        <text x="0" y="0" class="text-aura">Aura</text>
+                        <text x="105" y="0" class="text-sys">sys</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Logotipo</h3>
+                <p><strong>Diseño meramente tipográfico.</strong><br>Es el nombre de la empresa escrito con su tipografía característica, sin iconos. Ideal para contratos, pie de página o espacios horizontales reducidos.</p>
+            </div>
+        </div>
+
+        <!-- 2. ISOTIPO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <g transform="translate(47, 105)">
+                        <rect class="bar b1" x="0" y="-20" width="8" height="20" rx="4"/>
+                        <rect class="bar b2" x="12" y="-40" width="8" height="40" rx="4"/>
+                        <rect class="bar b3" x="24" y="-60" width="8" height="60" rx="4"/>
+                        <rect class="bar b4" x="36" y="-40" width="8" height="40" rx="4"/>
+                        <rect class="bar b5" x="48" y="-20" width="8" height="20" rx="4"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Isotipo</h3>
+                <p><strong>Símbolo ilustrativo independiente.</strong><br>La onda cinética pura. Se reconoce sin necesidad de leer el nombre. Perfecto para favicons (pestaña del navegador), avatares de redes sociales y apps.</p>
+            </div>
+        </div>
+
+        <!-- 3. IMAGOTIPO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="300" height="120" viewBox="0 0 300 120">
+                    <g transform="translate(20, 20)">
+                        <!-- Icono -->
+                        <g transform="translate(0, 70)">
+                            <rect class="bar b1" x="0" y="-20" width="8" height="20" rx="4"/>
+                            <rect class="bar b2" x="12" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar b3" x="24" y="-60" width="8" height="60" rx="4"/>
+                            <rect class="bar b4" x="36" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar b5" x="48" y="-20" width="8" height="20" rx="4"/>
+                        </g>
+                        <!-- Texto -->
+                        <g class="anim-slide" transform="translate(75, 52)">
+                            <text x="0" y="0" class="text-aura">Aura</text>
+                            <text x="105" y="0" class="text-sys">sys</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Imagotipo</h3>
+                <p><strong>Conjunción de isotipo + logotipo (separables).</strong><br>La versión principal de tu marca. El símbolo y el texto conviven en armonía, pero están separados y pueden funcionar el uno sin el otro.</p>
+            </div>
+        </div>
+
+        <!-- 4. ISOLOGO -->
+        <div class="card">
+            <div class="preview">
+                <svg width="250" height="150" viewBox="0 0 250 150">
+                    <g transform="translate(125, 75)">
+                        <!-- Emblema de fondo -->
+                        <circle class="anim-fade" cx="0" cy="0" r="65" fill="#0b1121" stroke="var(--c-blue3)" stroke-width="2"/>
+                        
+                        <!-- Ondas integradas en el centro -->
+                        <g transform="translate(-28, 30)">
+                            <rect class="bar b1" x="0" y="-20" width="8" height="20" rx="4"/>
+                            <rect class="bar b2" x="12" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar b3" x="24" y="-60" width="8" height="60" rx="4"/>
+                            <rect class="bar b4" x="36" y="-40" width="8" height="40" rx="4"/>
+                            <rect class="bar b5" x="48" y="-20" width="8" height="20" rx="4"/>
+                        </g>
+
+                        <!-- Texto fundido (con contorno para que corte las ondas y sea indivisible) -->
+                        <g class="anim-slide" text-anchor="middle" transform="translate(0, 10)">
+                            <!-- Capa de contorno grueso -->
+                            <text x="-32" y="0" class="text-aura" stroke="#0b1121" stroke-width="8" stroke-linejoin="round">Aura</text>
+                            <text x="40" y="0" class="text-sys" stroke="#0b1121" stroke-width="8" stroke-linejoin="round">sys</text>
+                            
+                            <!-- Capa de color frontal -->
+                            <text x="-32" y="0" class="text-aura">Aura</text>
+                            <text x="40" y="0" class="text-sys">sys</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="info">
+                <h3>Isologo</h3>
+                <p><strong>Fusión indivisible de texto e imagen.</strong><br>El texto está grabado sobre el símbolo formando un emblema único (tipo medalla o parche). No pueden separarse sin destruir el diseño.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

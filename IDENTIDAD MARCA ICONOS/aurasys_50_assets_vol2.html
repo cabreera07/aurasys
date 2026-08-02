@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurasys - Design System Vol. 2 (50 Assets)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #070b14;
+            --c-dark: #0f172a;
+            --c-blue1: #1e3a8a;
+            --c-blue2: #2563eb;
+            --c-blue3: #60a5fa;
+            --c-cyan: #38bdf8;
+            --c-white: #ffffff;
+            --text-main: #94a3b8;
+        }
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            color: var(--c-white);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--c-white);
+        }
+        .header p {
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .section-title {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            font-size: 1.2rem;
+            color: var(--c-cyan);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+            padding-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .icon-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(96, 165, 250, 0.1);
+            border-radius: 12px;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .icon-card:hover {
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--c-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.1);
+        }
+        .icon-card svg {
+            width: 40px;
+            height: 40px;
+        }
+        .icon-label {
+            position: absolute;
+            bottom: 8px;
+            font-size: 0.5rem;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            width: 90%;
+        }
+        
+        /* Animaciones Globales */
+        @keyframes pulse { 0% { transform: scale(0.95); opacity: 0.8; } 100% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 5px var(--c-cyan)); } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-3px); } 100% { transform: translateY(0px); } }
+        @keyframes wave { 0% { transform: scaleY(0.7); } 100% { transform: scaleY(1); } }
+        
+        .anim-pulse { animation: pulse 2s infinite alternate; }
+        .anim-spin { animation: spin 8s linear infinite; transform-origin: center; }
+        .anim-float { animation: float 3s ease-in-out infinite; }
+        .anim-wave { transform-origin: bottom; animation: wave 1s ease-in-out infinite alternate; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Librería de Assets Vol. 2: Aurasys</h1>
+        <p>50 NUEVOS objetos corporativos enfocados en Marketing, Papelería, Dispositivos, Seguridad y Patrones de Fondo. Todos mantienen el ADN "Deep Tech".</p>
+    </div>
+<div class="section-title">6. Marketing & Conversiones</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 24 L28 24 L44 14 L44 50 L28 40 L16 40 Z" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/><path d="M48 24 A 8 8 0 0 1 48 40" fill="none" stroke="#38bdf8" stroke-width="3" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Megáfono</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="20" stroke="#1e3a8a" stroke-width="4" fill="none"/><circle cx="32" cy="32" r="12" stroke="#2563eb" stroke-width="4" fill="none"/><circle cx="32" cy="32" r="4" fill="#38bdf8" class="anim-pulse"/><path d="M32 12 L32 4 M32 60 L32 52 M12 32 L4 32 M60 32 L52 32" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Objetivo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12,16 52,16 38,36 38,52 26,48 26,36" fill="none" stroke="#60a5fa" stroke-width="3"/><rect x="24" y="24" width="16" height="4" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Embudo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="32,12 38,24 52,24 40,32 44,46 32,38 20,46 24,32 12,24 26,24" fill="none" stroke="#38bdf8" stroke-width="3"/><circle cx="32" cy="32" r="4" fill="#60a5fa" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Estrella</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28 L32 12 L52 12 L52 32 L36 48 Z" fill="none" stroke="#2563eb" stroke-width="3"/><circle cx="44" cy="20" r="3" fill="#38bdf8"/><line x1="28" y1="28" x2="40" y2="40" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Etiqueta</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="12,48 24,36 36,40 52,20" fill="none" stroke="#38bdf8" stroke-width="3"/><polygon points="52,20 44,20 52,28" fill="#38bdf8"/><rect x="12" y="16" width="4" height="32" fill="#1e3a8a"/><rect x="12" y="48" width="40" height="4" fill="#1e3a8a"/>
+            </svg>
+            <span class="icon-label">Crecimiento</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 52 C 32 52, 12 36, 12 22 C 12 14, 20 12, 26 16 C 32 20, 32 20, 32 20 C 32 20, 32 20, 38 16 C 44 12, 52 14, 52 22 C 52 36, 32 52, 32 52 Z" fill="none" stroke="#38bdf8" stroke-width="3" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Favorito</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="32" r="6" stroke="#2563eb" stroke-width="3" fill="none"/><circle cx="48" cy="16" r="6" stroke="#60a5fa" stroke-width="3" fill="none"/><circle cx="48" cy="48" r="6" stroke="#38bdf8" stroke-width="3" fill="none"/><line x1="22" y1="29" x2="42" y2="19" stroke="#1e3a8a" stroke-width="2"/><line x1="22" y1="35" x2="42" y2="45" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Compartir</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 20 C 12 14, 18 10, 32 10 C 46 10, 52 14, 52 20 C 52 26, 46 30, 32 30 C 26 30, 18 34, 12 38 L 12 20 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M24 38 C 24 44, 30 48, 40 48 C 44 48, 48 52, 52 56 L 52 38" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Conversación</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="20" width="40" height="24" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><polyline points="12,20 32,32 52,20" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="32" y1="44" x2="32" y2="56" stroke="#2563eb" stroke-width="3"/><line x1="24" y1="56" x2="40" y2="56" stroke="#2563eb" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Newsletter</span>
+        </div></div><div class="section-title">7. Documentos & Papelería</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="12" width="32" height="40" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="24" y1="24" x2="40" y2="24" stroke="#38bdf8" stroke-width="2"/><line x1="24" y1="32" x2="40" y2="32" stroke="#38bdf8" stroke-width="2"/><line x1="24" y1="40" x2="32" y2="40" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Documento</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="12" width="32" height="40" rx="2" fill="none" stroke="#1e3a8a" stroke-width="3"/><rect x="16" y="12" width="32" height="12" fill="#2563eb"/><circle cx="32" cy="18" r="3" fill="#ffffff" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Membrete</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 24 L24 24 L28 20 L52 20 L52 44 L12 44 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><rect x="20" y="28" width="24" height="16" fill="#1e3a8a" opacity="0.5"/>
+            </svg>
+            <span class="icon-label">Carpeta</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M44 12 L52 20 L24 48 L16 48 L16 40 Z" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="40" y1="16" x2="48" y2="24" stroke="#60a5fa" stroke-width="2"/><path d="M12 52 Q 24 44 32 52 T 52 52" fill="none" stroke="#2563eb" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Firma</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 40 L28 20 A 4 4 0 0 1 36 20 L36 44 A 8 8 0 0 1 20 44 L20 16 A 12 12 0 0 1 44 16 L44 36" fill="none" stroke="#60a5fa" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Adjunto</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="28" width="32" height="16" rx="2" fill="none" stroke="#2563eb" stroke-width="3"/><rect x="24" y="16" width="16" height="12" fill="none" stroke="#60a5fa" stroke-width="3"/><rect x="22" y="44" width="20" height="12" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="26" y1="48" x2="38" y2="48" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Impresión</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="12" width="32" height="40" rx="2" fill="none" stroke="#1e3a8a" stroke-width="3"/><circle cx="36" cy="40" r="6" fill="#38bdf8"/><path d="M36 46 L32 52 L36 50 L40 52 Z" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Contrato</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2" class="anim-spin"/><circle cx="32" cy="32" r="12" fill="none" stroke="#60a5fa" stroke-width="2"/><text x="32" y="36" font-size="10" fill="#38bdf8" text-anchor="middle" font-family="sans-serif" font-weight="bold">OK</text>
+            </svg>
+            <span class="icon-label">Sello Oficial</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="24" width="40" height="24" rx="2" fill="none" stroke="#2563eb" stroke-width="3"/><polygon points="12,24 32,12 52,24" fill="none" stroke="#60a5fa" stroke-width="3"/><polyline points="12,24 32,36 52,24" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Correo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="12" width="32" height="40" rx="2" fill="none" stroke="#1e3a8a" stroke-width="3"/><polyline points="20,24 24,28 30,20" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="34" y1="24" x2="44" y2="24" stroke="#60a5fa" stroke-width="2"/><polyline points="20,36 24,40 30,32" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="34" y1="36" x2="44" y2="36" stroke="#60a5fa" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Checklist</span>
+        </div></div><div class="section-title">8. Dispositivos & Pantallas</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="24" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="32" y1="40" x2="32" y2="48" stroke="#2563eb" stroke-width="3"/><line x1="24" y1="48" x2="40" y2="48" stroke="#2563eb" stroke-width="3"/><rect x="16" y="20" width="32" height="16" fill="#1e3a8a"/>
+            </svg>
+            <span class="icon-label">Monitor</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="24" width="32" height="20" rx="2" fill="none" stroke="#38bdf8" stroke-width="3"/><polygon points="10,44 54,44 50,48 14,48" fill="#2563eb"/>
+            </svg>
+            <span class="icon-label">Laptop</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="22" y="12" width="20" height="40" rx="4" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="28" y1="16" x2="36" y2="16" stroke="#2563eb" stroke-width="2"/><circle cx="32" cy="46" r="2" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Móvil</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="12" width="32" height="40" rx="4" fill="none" stroke="#2563eb" stroke-width="3"/><circle cx="32" cy="46" r="2" fill="#60a5fa"/>
+            </svg>
+            <span class="icon-label">Tablet</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="24" y="20" width="16" height="24" rx="4" fill="none" stroke="#38bdf8" stroke-width="3"/><path d="M28 20 L28 12 L36 12 L36 20 M28 44 L28 52 L36 52 L36 44" fill="none" stroke="#1e3a8a" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Smartwatch</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 36 C 16 36, 16 28, 24 28 C 24 20, 40 20, 40 28 C 48 28, 48 36, 44 36 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="26" y1="44" x2="38" y2="44" stroke="#38bdf8" stroke-width="2"/><line x1="32" y1="36" x2="32" y2="44" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Servidor Nube</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="32" height="24" rx="2" fill="none" stroke="#1e3a8a" stroke-width="3"/><rect x="36" y="28" width="12" height="20" rx="2" fill="#070b14" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Responsive</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="24" r="10" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="32" cy="24" r="4" fill="#38bdf8"/><path d="M24 40 L40 40 L44 48 L20 48 Z" fill="none" stroke="#2563eb" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Webcam</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="24" width="40" height="16" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><rect x="16" y="28" width="4" height="4" fill="#38bdf8"/><rect x="22" y="28" width="4" height="4" fill="#38bdf8"/><rect x="28" y="28" width="4" height="4" fill="#38bdf8"/><rect x="34" y="28" width="4" height="4" fill="#38bdf8"/><rect x="40" y="28" width="4" height="4" fill="#38bdf8"/><rect x="24" y="34" width="16" height="2" fill="#2563eb"/>
+            </svg>
+            <span class="icon-label">Teclado</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="24" y="16" width="16" height="32" rx="8" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="32" y1="16" x2="32" y2="26" stroke="#60a5fa" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Ratón</span>
+        </div></div><div class="section-title">9. Seguridad & Confianza</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 12 L50 20 C 50 36, 40 48, 32 52 C 24 48, 14 36, 14 20 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M32 12 L32 52" stroke="#2563eb" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Escudo</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="32" width="24" height="20" rx="2" fill="none" stroke="#38bdf8" stroke-width="3"/><path d="M24 32 L24 20 A 8 8 0 0 1 40 20 L40 32" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="32" cy="42" r="2" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Candado</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="44" r="8" fill="none" stroke="#60a5fa" stroke-width="3"/><line x1="26" y1="38" x2="48" y2="16" stroke="#60a5fa" stroke-width="3"/><line x1="40" y1="24" x2="46" y2="30" stroke="#38bdf8" stroke-width="3"/><line x1="46" y1="18" x2="52" y2="24" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Llave</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 16 A 12 12 0 0 1 40 16" fill="none" stroke="#38bdf8" stroke-width="2"/><path d="M20 22 A 16 16 0 0 1 44 22 L 44 40" fill="none" stroke="#60a5fa" stroke-width="2"/><path d="M16 28 A 20 20 0 0 1 48 28 L 48 44" fill="none" stroke="#2563eb" stroke-width="2"/><path d="M28 16 A 4 4 0 0 1 36 16 L36 36" fill="none" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Biometría</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 32 C 12 32, 20 20, 32 20 C 44 20, 52 32, 52 32 C 52 32, 44 44, 32 44 C 20 44, 12 32, 12 32 Z" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="32" cy="32" r="6" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Privacidad</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 12 L50 20 C 50 36, 40 48, 32 52 C 24 48, 14 36, 14 20 Z" fill="none" stroke="#1e3a8a" stroke-width="3"/><polyline points="24,32 30,38 40,24" fill="none" stroke="#38bdf8" stroke-width="3"/>
+            </svg>
+            <span class="icon-label">Verificado</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="16" width="40" height="32" fill="none" stroke="#2563eb" stroke-width="2"/><line x1="12" y1="26" x2="52" y2="26" stroke="#2563eb" stroke-width="2"/><line x1="12" y1="36" x2="52" y2="36" stroke="#2563eb" stroke-width="2"/><line x1="24" y1="16" x2="24" y2="26" stroke="#2563eb" stroke-width="2"/><line x1="40" y1="26" x2="40" y2="36" stroke="#2563eb" stroke-width="2"/><line x1="28" y1="36" x2="28" y2="48" stroke="#2563eb" stroke-width="2"/><path d="M28 24 Q 32 16 36 24 Q 32 32 28 24 Z" fill="#38bdf8" class="anim-pulse"/>
+            </svg>
+            <span class="icon-label">Firewall</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="20" width="32" height="24" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="26" cy="32" r="4" fill="#38bdf8"/><line x1="34" y1="30" x2="44" y2="30" stroke="#2563eb" stroke-width="2"/><line x1="34" y1="34" x2="40" y2="34" stroke="#2563eb" stroke-width="2"/><path d="M22 44 C 22 40, 30 40, 30 44" fill="none" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Identidad</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="16" width="32" height="32" rx="2" fill="none" stroke="#1e3a8a" stroke-width="3"/><circle cx="32" cy="32" r="8" fill="none" stroke="#60a5fa" stroke-width="3" class="anim-spin"/><circle cx="32" cy="32" r="2" fill="#38bdf8"/><line x1="32" y1="24" x2="32" y2="28" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Caja Fuerte</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="32" width="24" height="20" rx="2" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M24 32 L24 20 A 8 8 0 0 1 40 20 L40 24" fill="none" stroke="#38bdf8" stroke-width="3"/><circle cx="32" cy="42" r="2" fill="#2563eb"/>
+            </svg>
+            <span class="icon-label">Acceso</span>
+        </div></div><div class="section-title">10. Abstractos & Fondos</div><div class="grid">
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="16" y1="16" x2="16" y2="48" stroke="#1e3a8a" stroke-width="2"/><line x1="32" y1="16" x2="32" y2="48" stroke="#1e3a8a" stroke-width="2"/><line x1="48" y1="16" x2="48" y2="48" stroke="#1e3a8a" stroke-width="2"/><line x1="16" y1="16" x2="48" y2="16" stroke="#2563eb" stroke-width="2"/><line x1="16" y1="32" x2="48" y2="32" stroke="#2563eb" stroke-width="2"/><line x1="16" y1="48" x2="48" y2="48" stroke="#2563eb" stroke-width="2"/><circle cx="32" cy="32" r="3" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Malla Grid</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 32 Q 18 20 26 32 T 42 32 T 58 32" fill="none" stroke="#38bdf8" stroke-width="2" class="anim-wave"/>
+            </svg>
+            <span class="icon-label">Frecuencia</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#60a5fa"><circle cx="20" cy="20" r="2"/><circle cx="32" cy="20" r="2"/><circle cx="44" cy="20" r="2"/><circle cx="20" cy="32" r="2"/><circle cx="32" cy="32" r="4" fill="#38bdf8"/><circle cx="44" cy="32" r="2"/><circle cx="20" cy="44" r="2"/><circle cx="32" cy="44" r="2"/><circle cx="44" cy="44" r="2"/></g>
+            </svg>
+            <span class="icon-label">Matriz</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="16" fill="none" stroke="#1e3a8a" stroke-width="2"/><line x1="32" y1="10" x2="32" y2="20" stroke="#38bdf8" stroke-width="2"/><line x1="32" y1="44" x2="32" y2="54" stroke="#38bdf8" stroke-width="2"/><line x1="10" y1="32" x2="20" y2="32" stroke="#38bdf8" stroke-width="2"/><line x1="44" y1="32" x2="54" y2="32" stroke="#38bdf8" stroke-width="2"/><circle cx="32" cy="32" r="2" fill="#60a5fa"/>
+            </svg>
+            <span class="icon-label">Precisión</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="26" cy="32" r="12" fill="none" stroke="#60a5fa" stroke-width="3"/><circle cx="38" cy="32" r="12" fill="none" stroke="#38bdf8" stroke-width="3"/><path d="M32 22 L32 42" stroke="#2563eb" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Intersección</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 16 Q 40 32 24 48" fill="none" stroke="#60a5fa" stroke-width="2"/><path d="M40 16 Q 24 32 40 48" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="27" y1="24" x2="37" y2="24" stroke="#1e3a8a" stroke-width="2"/><line x1="27" y1="40" x2="37" y2="40" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Hélice</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="3" fill="#60a5fa"/><circle cx="44" cy="24" r="4" fill="#38bdf8"/><circle cx="28" cy="44" r="3" fill="#60a5fa"/><circle cx="48" cy="40" r="2" fill="#2563eb"/><line x1="20" y1="20" x2="44" y2="24" stroke="#1e3a8a" stroke-width="2"/><line x1="44" y1="24" x2="28" y2="44" stroke="#1e3a8a" stroke-width="2"/><line x1="44" y1="24" x2="48" y2="40" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Constelación</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 32 C 32 26, 38 26, 38 32 C 38 40, 26 40, 26 32 C 26 22, 42 22, 42 32 C 42 44, 22 44, 22 32 C 22 18, 46 18, 46 32" fill="none" stroke="#38bdf8" stroke-width="2"/>
+            </svg>
+            <span class="icon-label">Espiral</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="20" width="4" height="24" fill="#60a5fa"/><rect x="24" y="20" width="2" height="24" fill="#38bdf8"/><rect x="30" y="20" width="6" height="24" fill="#2563eb"/><rect x="40" y="20" width="2" height="24" fill="#1e3a8a"/><rect x="46" y="20" width="4" height="24" fill="#38bdf8"/>
+            </svg>
+            <span class="icon-label">Código Barras</span>
+        </div>
+        <div class="icon-card">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="4" fill="#38bdf8" class="anim-pulse"/><circle cx="20" cy="16" r="2" fill="#60a5fa" class="anim-float"/><circle cx="48" cy="20" r="1" fill="#2563eb"/><circle cx="16" cy="40" r="1.5" fill="#38bdf8"/><circle cx="44" cy="48" r="2" fill="#60a5fa" class="anim-float"/>
+            </svg>
+            <span class="icon-label">Partículas</span>
+        </div></div>
+</body>
+</html>
