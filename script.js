@@ -1,4 +1,4 @@
-﻿const DEFAULT_THEME = "light";
+const DEFAULT_THEME = "light";
 const form = document.getElementById("diagnosticForm");
 const menuToggle = document.getElementById("menuToggle");
 const siteNav = document.getElementById("siteNav");
@@ -12,6 +12,18 @@ const animatedElements = document.querySelectorAll("[data-animate]");
 const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
 const medioContactoHelp = document.getElementById("medioContactoHelp");
+
+// Throttle helper for scroll events
+function throttle(func, limit) {
+  let inThrottle;
+  return function (...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  };
+}
 
 function setTheme(theme) {
   const resolvedTheme = theme || DEFAULT_THEME;
@@ -29,19 +41,28 @@ function applySharedConfig() {
   const email = config.email || "tucorreo@ejemplo.com";
   const tiktok = config.tiktokUrl || "https://www.tiktok.com/@tuusuario";
 
-  document.querySelectorAll("#siteLogo, #footerLogo").forEach((img) => {
+  // Batch DOM updates - query once, update multiple targets
+  const logoElements = document.querySelectorAll("#siteLogo, #footerLogo");
+  logoElements.forEach((img) => {
     img.src = logo;
   });
 
-  if (waFloat) waFloat.href = whatsapp;
-  document.querySelectorAll("#footerWhatsApp, #contactWhatsApp").forEach((a) => {
+  // Cache whatsapp links
+  const waLinks = document.querySelectorAll("#waFloat, #footerWhatsApp, #contactWhatsApp");
+  waLinks.forEach((a) => {
     a.href = whatsapp;
   });
-  document.querySelectorAll("#footerEmail, #contactEmail").forEach((a) => {
+
+  // Cache email links
+  const emailLinks = document.querySelectorAll("#footerEmail, #contactEmail");
+  emailLinks.forEach((a) => {
     a.href = `mailto:${email}`;
     a.textContent = email;
   });
-  document.querySelectorAll("#footerTikTok, #contactTikTok").forEach((a) => {
+
+  // Cache tiktok links
+  const tikTokLinks = document.querySelectorAll("#footerTikTok, #contactTikTok");
+  tikTokLinks.forEach((a) => {
     a.href = tiktok;
   });
 }
@@ -57,6 +78,12 @@ function updateScrollProgress() {
   if (scrollProgress) scrollProgress.style.width = `${Math.min(percentage, 100)}%`;
   if (backToTop) backToTop.classList.toggle("visible", window.scrollY > 320);
 }
+
+// Throttle scroll events (50ms)
+const handleScroll = throttle(() => {
+  setHeaderState();
+  updateScrollProgress();
+}, 50);
 
 function toggleMenu() {
   if (!siteNav || !menuToggle) return;
@@ -80,14 +107,17 @@ function setActiveNav() {
 
 function observeAnimations() {
   if (!animatedElements.length) return;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
   animatedElements.forEach((element) => observer.observe(element));
 }
@@ -99,7 +129,12 @@ function setupFaq() {
       const answer = item.querySelector(".faq-answer");
       const isExpanded = button.getAttribute("aria-expanded") === "true";
       button.setAttribute("aria-expanded", String(!isExpanded));
-      answer.style.maxHeight = isExpanded ? "0px" : `${answer.scrollHeight}px`;
+      // Use data attribute to avoid recalculating scrollHeight
+      if (!isExpanded) {
+        answer.style.maxHeight = `${answer.scrollHeight}px`;
+      } else {
+        answer.style.maxHeight = "0px";
+      }
     });
   });
 }
@@ -182,14 +217,23 @@ async function sendRequest(payload) {
     return Promise.resolve({ ok: true });
   }
 
-  const response = await fetch(googleScriptUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
+  // Add 10 second timeout for fetch request
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-  if (!response.ok) throw new Error("Fallo al enviar la solicitud.");
-  return response.json().catch(() => ({ ok: true }));
+  try {
+    const response = await fetch(googleScriptUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    });
+
+    if (!response.ok) throw new Error("Fallo al enviar la solicitud.");
+    return response.json().catch(() => ({ ok: true }));
+  } finally {
+    clearTimeout(timeoutId);
+  }
 }
 
 function resetForm() {
@@ -212,7 +256,10 @@ async function handleSubmit(event) {
   try {
     const payload = buildPayload();
     await sendRequest(payload);
-    showMessage("Gracias por contactarnos. Hemos recibido tu solicitud. En Aurasys revisaremos la información y te contactaremos en 2 a 3 días hábiles. La propuesta formal será enviada por correo electrónico en formato PDF.", "success");
+    showMessage(
+      "Gracias por contactarnos. Hemos recibido tu solicitud. En Aurasys revisaremos la información y te contactaremos en 2 a 3 días hábiles. La propuesta formal será enviada por correo.",
+      "success"
+    );
     resetForm();
   } catch (error) {
     console.error(error);
@@ -223,10 +270,8 @@ async function handleSubmit(event) {
   }
 }
 
-window.addEventListener("scroll", () => {
-  setHeaderState();
-  updateScrollProgress();
-});
+// Use throttled scroll handler
+window.addEventListener("scroll", handleScroll);
 
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("aurasys-theme") || DEFAULT_THEME;
