@@ -81,7 +81,7 @@ body[data-theme="dark"] .site-header.scrolled { background: rgba(2, 8, 23, 0.96)
  display: inline-flex; align-items: center; gap: 0.75rem; font-weight: 800; font-family: "Poppins", sans-serif;
 }
 .brand-logo {
- width: 42px; height: 42px; border-radius: 12px; object-fit: cover; flex-shrink: 0;
+ width: auto; height: 38px; max-width: 170px; border-radius: 0; object-fit: contain; flex-shrink: 0;
 }
 body[data-theme="dark"] .brand-logo { filter: none; }
 
