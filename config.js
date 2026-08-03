@@ -1,5 +1,6 @@
 window.AURASYS_CONFIG = {
-  logoPath: "assets/logo/logo-aurasys.svg",
+  logoDarkPath: "assets/LOGOS AURASYS CO/aurasys-logo-glow-transparent.svg",
+  logoLightPath: "assets/LOGOS AURASYS CO/aurasys-logo-black.svg",
   whatsappUrl: "https://wa.me/50258798301",
   email: "hola@aurasys.gt",
   tiktokUrl: "https://www.tiktok.com/@aurasys.gt",

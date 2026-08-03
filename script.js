@@ -20,18 +20,25 @@ function setTheme(theme) {
   if (themeToggle) {
     themeToggle.textContent = resolvedTheme === "dark" ? "☀️" : "🌙";
   }
+  updateLogoForTheme(resolvedTheme);
+}
+
+function updateLogoForTheme(theme) {
+  const config = window.AURASYS_CONFIG || {};
+  const darkLogo = config.logoDarkPath || config.logoPath || "assets/logo/logo-placeholder.svg";
+  const lightLogo = config.logoLightPath || config.logoPath || darkLogo;
+  const selectedLogo = theme === "dark" ? darkLogo : lightLogo;
+
+  document.querySelectorAll("#siteLogo, #footerLogo").forEach((img) => {
+    img.src = selectedLogo;
+  });
 }
 
 function applySharedConfig() {
   const config = window.AURASYS_CONFIG || {};
-  const logo = config.logoPath || "assets/logo/logo-placeholder.svg";
   const whatsapp = config.whatsappUrl || "https://wa.me/50258798301";
   const email = config.email || "CABREERA07WALTER@gmail.com";
   const tiktok = config.tiktokUrl || "https://www.tiktok.com/@tuusuario";
-
-  document.querySelectorAll("#siteLogo, #footerLogo").forEach((img) => {
-    img.src = logo;
-  });
 
   if (waFloat) waFloat.href = whatsapp;
   document.querySelectorAll("#footerWhatsApp, #contactWhatsApp").forEach((a) => {
