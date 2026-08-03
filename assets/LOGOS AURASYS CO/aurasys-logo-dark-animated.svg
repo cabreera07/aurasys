@@ -1,0 +1,33 @@
+<svg width="680" height="141" viewBox="0 0 680 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="141" fill="#252525"/>
+  <defs>
+    <linearGradient id="auraGradientDark" x1="18" y1="101" x2="98" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="0.52" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+    <style>
+      .bulb-outline { animation: bulbGlow 3.4s ease-in-out infinite; }
+      .system-path { stroke-dasharray: 90; stroke-dashoffset: 90; animation: drawSystem 3.4s ease-in-out infinite; }
+      .node-center { animation: nodePulse 2.6s ease-in-out infinite; transform-origin: 47px 43px; }
+      .node-left { animation: nodePulse 2.6s ease-in-out infinite; animation-delay: 0.2s; transform-origin: 30px 59px; }
+      .node-right { animation: nodePulse 2.6s ease-in-out infinite; animation-delay: 0.4s; transform-origin: 64px 59px; }
+      @keyframes bulbGlow { 0%, 100% { filter: drop-shadow(0 0 0px rgba(103,232,249,0)); } 50% { filter: drop-shadow(0 0 7px rgba(103,232,249,0.38)); } }
+      @keyframes drawSystem { 0% { stroke-dashoffset: 90; opacity: 0.55; } 35% { stroke-dashoffset: 0; opacity: 1; } 75% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: -90; opacity: 0.55; } }
+      @keyframes nodePulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.92; } }
+    </style>
+  </defs>
+  <g transform="translate(16 24)">
+    <path d="M47 8C70 8 88 26 88 49C88 63 80 75 67 83H27C14 75 6 63 6 49C6 26 24 8 47 8Z" fill="#10233D"/>
+    <path class="bulb-outline" d="M47 8C70 8 88 26 88 49C88 63 80 75 67 83H27C14 75 6 63 6 49C6 26 24 8 47 8Z" stroke="url(#auraGradientDark)" stroke-width="6" stroke-linejoin="round"/>
+    <path class="system-path" d="M30 59L47 43L64 59" stroke="#EAF6FF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="node-left" cx="30" cy="59" r="6.5" fill="#3B82F6"/>
+    <circle class="node-center" cx="47" cy="43" r="7.5" fill="#60A5FA"/>
+    <circle class="node-right" cx="64" cy="59" r="6.5" fill="#67E8F9"/>
+    <path d="M31 24C37 19 43 17 50 17" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+    <path d="M29 90H65" stroke="#EAF6FF" stroke-width="7" stroke-linecap="round"/>
+    <path d="M36 100H58" stroke="#EAF6FF" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  </g>
+  <text x="128" y="80" font-family="Inter, Montserrat, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-2"><tspan fill="#FFFFFF">Aura</tspan><tspan fill="#67E8F9" font-weight="500">Sys</tspan></text>
+  <text x="133" y="107" font-family="Inter, Montserrat, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="4" fill="#CBD5E1">DALE ESTRUCTURA A TUS IDEAS</text>
+</svg>

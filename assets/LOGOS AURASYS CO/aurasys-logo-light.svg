@@ -1,0 +1,28 @@
+<svg width="680" height="141" viewBox="0 0 680 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="680" height="141" fill="#FFFFFF"/>
+  <defs>
+    <linearGradient id="auraGradientLight" x1="18" y1="101" x2="98" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="0.52" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(16 24)">
+    <path d="M47 8C70 8 88 26 88 49C88 63 80 75 67 83H27C14 75 6 63 6 49C6 26 24 8 47 8Z" fill="#EEF7FF"/>
+    <path d="M47 8C70 8 88 26 88 49C88 63 80 75 67 83H27C14 75 6 63 6 49C6 26 24 8 47 8Z" stroke="url(#auraGradientLight)" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M30 59L47 43L64 59" stroke="#0F172A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="30" cy="59" r="6.5" fill="#2563EB"/>
+    <circle cx="47" cy="43" r="7.5" fill="#60A5FA"/>
+    <circle cx="64" cy="59" r="6.5" fill="#38BDF8"/>
+    <path d="M31 24C37 19 43 17 50 17" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+    <path d="M29 90H65" stroke="#0F172A" stroke-width="7" stroke-linecap="round"/>
+    <path d="M36 100H58" stroke="#0F172A" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  </g>
+
+  <text x="128" y="80" font-family="Inter, Montserrat, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-2">
+    <tspan fill="#0F172A">Aura</tspan><tspan fill="#38BDF8" font-weight="500">Sys</tspan>
+  </text>
+
+  <text x="133" y="107" font-family="Inter, Montserrat, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="4" fill="#475569">DALE ESTRUCTURA A TUS IDEAS</text>
+</svg>
