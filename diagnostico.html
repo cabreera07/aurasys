@@ -63,117 +63,39 @@
               <input type="text" name="nombreCompleto" id="nombreCompleto" required />
             </label>
             <label class="field">
-              <span>Correo electrónico</span>
-              <input type="email" name="correo" id="correo" required />
+              <span>Medio de contacto (Correo o WhatsApp)</span>
+              <input type="text" name="medioContacto" id="medioContacto" required placeholder="tu@correo.com o +502 0000 0000" />
             </label>
-            <label class="field">
-              <span>Número de WhatsApp</span>
-              <input type="tel" name="whatsapp" id="whatsapp" />
-            </label>
-
-          </div>
-
-          <div class="form-block">
-            <h3>¿Por dónde prefieres que nos comuniquemos contigo?</h3>
-            <div class="options-row">
-              <label><input type="radio" name="medioContacto" value="correo" checked /> Correo electrónico</label>
-              <label><input type="radio" name="medioContacto" value="whatsapp" /> WhatsApp</label>
-
-            </div>
-            <p class="field-help" id="medioContactoHelp">Correo electrónico recomendado para recibir la propuesta formal.</p>
-          </div>
-
-          <div class="form-block">
-            <h3>¿Cómo te identificas?</h3>
-            <div class="options-grid">
-              <label><input type="radio" name="tipoCliente" value="Estudiante" /> Estudiante</label>
-              <label><input type="radio" name="tipoCliente" value="Persona individual" /> Persona individual</label>
-              <label><input type="radio" name="tipoCliente" value="Emprendedor" /> Emprendedor</label>
-              <label><input type="radio" name="tipoCliente" value="Profesional independiente" /> Profesional independiente</label>
-              <label><input type="radio" name="tipoCliente" value="Equipo pequeño" /> Equipo pequeño</label>
-              <label><input type="radio" name="tipoCliente" value="Otro" /> Otro</label>
-            </div>
-          </div>
-
-          <div class="form-block">
-            <h3>¿Qué necesitas resolver?</h3>
-            <div class="options-grid">
-              <label><input type="radio" name="necesidadPrincipal" value="Organizar ideas" /> Organizar ideas</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Ordenar tareas o información" /> Ordenar tareas o información</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Crear una página web" /> Crear una página web</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Crear una herramienta digital" /> Crear una herramienta digital</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Mejorar un proceso" /> Mejorar un proceso</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Crear formularios o registros" /> Crear formularios o registros</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Recibir asesoría digital" /> Recibir asesoría digital</label>
-              <label><input type="radio" name="necesidadPrincipal" value="No estoy seguro, necesito orientación" /> No estoy seguro, necesito orientación</label>
-              <label><input type="radio" name="necesidadPrincipal" value="Otro" /> Otro</label>
-            </div>
           </div>
 
           <div class="form-block">
             <label class="field">
-              <span>Describe brevemente tu necesidad</span>
-              <textarea name="descripcion" id="descripcion" rows="4" required placeholder="Ejemplo: Tengo información en varios lugares y necesito organizarla para consultarla y darle seguimiento fácilmente."></textarea>
+              <span>Problema a resolver</span>
+              <textarea name="problemaAResolver" id="problemaAResolver" rows="4" required placeholder="Ejemplo: Tengo información en varios lugares y necesito organizarla para consultarla y darle seguimiento fácilmente."></textarea>
             </label>
           </div>
 
           <div class="form-block">
-            <h3>¿Qué tan claro tienes lo que necesitas?</h3>
-            <div class="options-grid">
-              <label><input type="radio" name="nivelClaridad" value="Ya sé exactamente lo que quiero" /> Ya sé exactamente lo que quiero</label>
-              <label><input type="radio" name="nivelClaridad" value="Tengo una idea, pero necesito ordenarla" /> Tengo una idea, pero necesito ordenarla</label>
-              <label><input type="radio" name="nivelClaridad" value="Solo sé el problema" /> Solo sé el problema</label>
-              <label><input type="radio" name="nivelClaridad" value="Necesito orientación desde cero" /> Necesito orientación desde cero</label>
+            <h3>Etapa actual</h3>
+            <div class="pill-options" role="radiogroup" aria-label="Etapa actual">
+              <label class="pill-option">
+                <input type="radio" name="etapaActual" value="Idea inicial" checked />
+                <span>Idea inicial</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="etapaActual" value="Tengo un proceso en marcha" />
+                <span>Tengo un proceso en marcha</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="etapaActual" value="Necesito ordenar información" />
+                <span>Necesito ordenar información</span>
+              </label>
+              <label class="pill-option">
+                <input type="radio" name="etapaActual" value="Quiero digitalizar algo existente" />
+                <span>Quiero digitalizar algo existente</span>
+              </label>
             </div>
           </div>
-
-          <div class="form-block">
-            <h3>¿Qué te gustaría recibir al final?</h3>
-            <div class="options-grid">
-              <label><input type="radio" name="resultadoEsperado" value="Página web" /> Página web</label>
-              <label><input type="radio" name="resultadoEsperado" value="Herramienta organizada" /> Herramienta organizada</label>
-              <label><input type="radio" name="resultadoEsperado" value="Archivo funcional" /> Archivo funcional</label>
-              <label><input type="radio" name="resultadoEsperado" value="Formulario con registro" /> Formulario con registro</label>
-              <label><input type="radio" name="resultadoEsperado" value="Sistema básico de organización" /> Sistema básico de organización</label>
-              <label><input type="radio" name="resultadoEsperado" value="Plantilla personalizada" /> Plantilla personalizada</label>
-              <label><input type="radio" name="resultadoEsperado" value="Asesoría" /> Asesoría</label>
-              <label><input type="radio" name="resultadoEsperado" value="No sé todavía" /> No sé todavía</label>
-            </div>
-          </div>
-
-          <div class="form-block">
-            <h3>¿Para cuándo lo necesitas?</h3>
-            <div class="options-grid">
-              <label><input type="radio" name="urgencia" value="Lo antes posible" /> Lo antes posible</label>
-              <label><input type="radio" name="urgencia" value="Esta semana" /> Esta semana</label>
-              <label><input type="radio" name="urgencia" value="En 2 a 3 semanas" /> En 2 a 3 semanas</label>
-              <label><input type="radio" name="urgencia" value="Este mes" /> Este mes</label>
-              <label><input type="radio" name="urgencia" value="No tengo urgencia" /> No tengo urgencia</label>
-            </div>
-          </div>
-
-          <div class="form-block">
-            <h3>¿Tienes un presupuesto estimado?</h3>
-            <div class="options-grid">
-              <label><input type="radio" name="presupuesto" value="Menos de Q500" /> Menos de Q500</label>
-              <label><input type="radio" name="presupuesto" value="Q500 a Q1,000" /> Q500 a Q1,000</label>
-              <label><input type="radio" name="presupuesto" value="Q1,000 a Q2,500" /> Q1,000 a Q2,500</label>
-              <label><input type="radio" name="presupuesto" value="Más de Q2,500" /> Más de Q2,500</label>
-              <label><input type="radio" name="presupuesto" value="No sé todavía" /> No sé todavía</label>
-            </div>
-          </div>
-
-          <input type="hidden" name="fechaHoraEnvio" id="fechaHoraEnvio" />
-          <input type="hidden" name="fuente" id="fuente" value="Sitio web Aurasys" />
-          <input type="hidden" name="utm_source" id="utm_source" />
-          <input type="hidden" name="utm_medium" id="utm_medium" />
-          <input type="hidden" name="utm_campaign" id="utm_campaign" />
-          <input type="hidden" name="utm_content" id="utm_content" />
-
-          <label class="checkbox-row">
-            <input type="checkbox" name="consentimiento" id="consentimiento" required />
-            <span>Acepto que Aurasys utilice esta información únicamente para revisar mi solicitud y contactarme sobre este servicio.</span>
-          </label>
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit" id="submitBtn">Enviar solicitud</button>

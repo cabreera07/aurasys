@@ -8,10 +8,9 @@ const scrollProgress = document.getElementById("scrollProgress");
 const themeToggle = document.getElementById("themeToggle");
 const waFloat = document.getElementById("waFloat");
 const faqButtons = document.querySelectorAll(".faq-question");
-const animatedElements = document.querySelectorAll("[data-animate]");
+const animatedElements = document.querySelectorAll("[data-animate], .service-card, .timeline-step");
 const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
-const medioContactoHelp = document.getElementById("medioContactoHelp");
 
 function setTheme(theme) {
   const resolvedTheme = theme || DEFAULT_THEME;
@@ -115,7 +114,7 @@ function observeAnimations() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
 
   animatedElements.forEach((element) => observer.observe(element));
 }
@@ -132,31 +131,19 @@ function setupFaq() {
   });
 }
 
-function updateContactHelp() {
-  if (!form || !medioContactoHelp) return;
-  const selected = form.querySelector('input[name="medioContacto"]:checked')?.value;
-  const whatsappValue = document.getElementById("whatsapp")?.value.trim() || "";
-  const tiktokValue = document.getElementById("tiktok")?.value.trim() || "";
-
-  if (selected === "whatsapp" && !whatsappValue) {
-    medioContactoHelp.textContent = "Para elegir WhatsApp como medio de contacto, agrega tu número.";
-  } else if (selected === "tiktok" && !tiktokValue) {
-    medioContactoHelp.textContent = "Para elegir TikTok como medio de contacto, agrega tu usuario.";
-  } else {
-    medioContactoHelp.textContent = "Correo electrónico recomendado para recibir la propuesta formal.";
-  }
-}
-
-function captureUtm() {
-  const params = new URLSearchParams(window.location.search);
-  ["utm_source", "utm_medium", "utm_campaign", "utm_content"].forEach((key) => {
-    const element = document.getElementById(key);
-    if (element) element.value = params.get(key) || "";
-  });
-}
-
 function validateEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function validateContact(value) {
+  const trimmedValue = value.trim();
+  if (!trimmedValue) return false;
+  if (trimmedValue.includes("@")) {
+    return validateEmail(trimmedValue);
+  }
+
+  const digitsOnly = trimmedValue.replace(/\D/g, "");
+  return digitsOnly.length >= 8;
 }
 
 function showMessage(text, type) {
@@ -168,37 +155,28 @@ function showMessage(text, type) {
 function validateForm() {
   if (!form) return true;
   const fullName = document.getElementById("nombreCompleto")?.value.trim();
-  const email = document.getElementById("correo")?.value.trim();
-  const description = document.getElementById("descripcion")?.value.trim();
-  const selected = form.querySelector('input[name="medioContacto"]:checked')?.value;
-  const whatsapp = document.getElementById("whatsapp")?.value.trim();
-  const tiktok = document.getElementById("tiktok")?.value.trim();
+  const contactMethod = document.getElementById("medioContacto")?.value.trim();
+  const problem = document.getElementById("problemaAResolver")?.value.trim();
+  const stage = form.querySelector('input[name="etapaActual"]:checked')?.value;
 
-  if (!fullName || !email || !description) {
+  if (!fullName || !contactMethod || !problem || !stage) {
     showMessage("Completa los campos obligatorios para continuar.", "error");
     return false;
   }
-  if (!validateEmail(email)) {
-    showMessage("Ingresa un correo electrónico válido.", "error");
-    return false;
-  }
-  if (selected === "whatsapp" && !whatsapp) {
-    showMessage("Para elegir WhatsApp como medio de contacto, agrega tu número.", "error");
-    return false;
-  }
-  if (selected === "tiktok" && !tiktok) {
-    showMessage("Para elegir TikTok como medio de contacto, agrega tu usuario.", "error");
+  if (!validateContact(contactMethod)) {
+    showMessage("Ingresa un correo válido o un número de WhatsApp con al menos 8 dígitos.", "error");
     return false;
   }
   return true;
 }
 
 function buildPayload() {
-  const data = new FormData(form);
-  const payload = Object.fromEntries(data.entries());
-  payload.fechaHoraEnvio = new Date().toISOString();
-  payload.fuente = "Sitio web Aurasys";
-  return payload;
+  return {
+    nombreCompleto: document.getElementById("nombreCompleto")?.value.trim() || "",
+    medioContacto: document.getElementById("medioContacto")?.value.trim() || "",
+    problemaAResolver: document.getElementById("problemaAResolver")?.value.trim() || "",
+    etapaActual: form.querySelector('input[name="etapaActual"]:checked')?.value || "",
+  };
 }
 
 async function sendRequest(payload) {
@@ -206,29 +184,18 @@ async function sendRequest(payload) {
   const googleScriptUrl = config.googleScriptUrl || "";
 
   if (!googleScriptUrl || googleScriptUrl.includes("PEGA_AQUI")) {
-    console .info("Google Apps Script no configurado. Simulando envío exitoso localmente.");
+    console.info("Google Apps Script no configurado. Simulando envío exitoso localmente.");
     return Promise.resolve({ ok: true });
   }
 
-  const response = await fetch(googleScriptUrl, {
+  await fetch(googleScriptUrl, {
     method: "POST",
+    mode: "no-cors",
     headers: {
-      "Content-Type": "text/plain;charset=utf-8",
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
     },
-    body: JSON.stringify(payload),
+    body: new URLSearchParams(payload).toString(),
   });
-
-  if (!response.ok) {
-    throw new Error(`Fallo al enviar la solicitud. Status: ${response.status}`);
-  }
-
-  const contentType = response.headers.get("content-type") || "";
-  if (contentType.includes("application/json")) {
-    const result = await response.json();
-    if (result?.result && result.result !== "success") {
-      throw new Error(result.error || "El servidor devolvio un error al guardar en Google Sheets.");
-    }
-  }
 
   return { ok: true };
 }
@@ -236,10 +203,8 @@ async function sendRequest(payload) {
 function resetForm() {
   if (!form) return;
   form.reset();
-  const correoOption = form.querySelector('input[name="medioContacto"][value="correo"]');
-  if (correoOption) correoOption.checked = true;
-  captureUtm();
-  updateContactHelp();
+  const defaultStage = form.querySelector('input[name="etapaActual"][value="Idea inicial"]');
+  if (defaultStage) defaultStage.checked = true;
 }
 
 async function handleSubmit(event) {
@@ -253,7 +218,7 @@ async function handleSubmit(event) {
   try {
     const payload = buildPayload();
     await sendRequest(payload);
-    showMessage("Gracias por contactarnos. Hemos recibido tu solicitud. En Aurasys revisaremos la información y te contactaremos en 2 a 3 días hábiles. La propuesta formal será enviada por correo electrónico en formato PDF.", "success");
+    showMessage("Gracias por contactarnos. Hemos recibido tu solicitud y revisaremos la información para responderte por el medio que indicaste.", "success");
     resetForm();
   } catch (error) {
     console.error(error);
@@ -278,8 +243,6 @@ window.addEventListener("load", () => {
   setHeaderState();
   updateScrollProgress();
   setActiveNav();
-  captureUtm();
-  updateContactHelp();
   observeAnimations();
   setupFaq();
 });
@@ -295,8 +258,3 @@ if (menuToggle) menuToggle.addEventListener("click", toggleMenu);
 if (siteNav) siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 if (backToTop) backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 if (form) form.addEventListener("submit", handleSubmit);
-if (form) {
-  document.querySelectorAll('input[name="medioContacto"]').forEach((radio) => {
-    radio.addEventListener("change", updateContactHelp);
-  });
-}
