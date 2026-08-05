@@ -156,8 +156,10 @@ function validateForm() {
   if (!form) return true;
   const fullName = document.getElementById("nombreCompleto")?.value.trim();
   const contactMethod = document.getElementById("medioContacto")?.value.trim();
-  const problem = document.getElementById("problemaAResolver")?.value.trim();
-  const stage = form.querySelector('input[name="etapaActual"]:checked')?.value;
+  // Buscamos el ID "descripcion"
+  const problem = document.getElementById("descripcion")?.value.trim(); 
+  // Buscamos el Name "nivelClaridad"
+  const stage = form.querySelector('input[name="nivelClaridad"]:checked')?.value; 
 
   if (!fullName || !contactMethod || !problem || !stage) {
     showMessage("Completa los campos obligatorios para continuar.", "error");
@@ -174,8 +176,10 @@ function buildPayload() {
   return {
     nombreCompleto: document.getElementById("nombreCompleto")?.value.trim() || "",
     medioContacto: document.getElementById("medioContacto")?.value.trim() || "",
-    problemaAResolver: document.getElementById("problemaAResolver")?.value.trim() || "",
-    etapaActual: form.querySelector('input[name="etapaActual"]:checked')?.value || "",
+    // Usamos la llave exacta "descripcion" y buscamos el ID "descripcion"
+    descripcion: document.getElementById("descripcion")?.value.trim() || "",
+    // Usamos la llave exacta "nivelClaridad" y buscamos el Name "nivelClaridad"
+    nivelClaridad: form.querySelector('input[name="nivelClaridad"]:checked')?.value || "",
   };
 }
 
@@ -203,7 +207,8 @@ async function sendRequest(payload) {
 function resetForm() {
   if (!form) return;
   form.reset();
-  const defaultStage = form.querySelector('input[name="etapaActual"][value="Idea inicial"]');
+  // Reinicia buscando el Name "nivelClaridad"
+  const defaultStage = form.querySelector('input[name="nivelClaridad"][value="Idea inicial"]');
   if (defaultStage) defaultStage.checked = true;
 }
 
