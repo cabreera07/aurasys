@@ -25,8 +25,7 @@ function setTheme(theme) {
 function updateLogoForTheme(theme) {
   const config = window.AURASYS_CONFIG || {};
   const darkLogo = config.logoDarkPath || config.logoPath || "assets/logo/logo-placeholder.svg";
-  const lightLogo = config.logoLightPath || config.logoPath || darkLogo;
-  const selectedLogo = theme === "dark" ? darkLogo : lightLogo;
+  const selectedLogo = darkLogo;
 
   document.querySelectorAll("#siteLogo, #footerLogo").forEach((img) => {
     img.src = selectedLogo;
@@ -152,25 +151,30 @@ function showMessage(text, type) {
   formMessage.className = `form-message ${type}`;
 }
 
+function clearMessage() {
+  if (!formMessage) return;
+  formMessage.textContent = "";
+  formMessage.className = "form-message";
+}
+
 function validateForm() {
   if (!form) return true;
-  
+
   const fullName = document.getElementById("nombreCompleto")?.value.trim();
   const contactMethod = document.getElementById("medioContacto")?.value.trim();
-  const problem = document.getElementById("descripcion")?.value.trim(); 
-  const requirement = form.querySelector('input[name="requerimiento"]:checked')?.value; 
+  const problem = document.getElementById("descripcion")?.value.trim();
+  const requirement = form.querySelector('input[name="requerimiento"]:checked')?.value;
 
-  // Si alguno de los 4 no existe, lanza el error
   if (!fullName || !contactMethod || !problem || !requirement) {
     showMessage("Completa los campos obligatorios para continuar.", "error");
     return false;
   }
-  
+
   if (!validateContact(contactMethod)) {
     showMessage("Ingresa un correo válido o un número de WhatsApp con al menos 8 dígitos.", "error");
     return false;
   }
-  
+
   return true;
 }
 
@@ -207,12 +211,14 @@ async function sendRequest(payload) {
 function resetForm() {
   if (!form) return;
   form.reset();
-  const defaultRequirement = form.querySelector('input[name="requerimiento"][value="Estoy iniciando y necesito claridad para avanzar"]');
+  clearMessage();
+  const defaultRequirement = form.querySelector('input[name="requerimiento"][value="Estructurar un nuevo proyecto"]');
   if (defaultRequirement) defaultRequirement.checked = true;
 }
 
 async function handleSubmit(event) {
   event.preventDefault();
+  clearMessage();
   if (!validateForm()) return;
   if (!submitBtn) return;
 
@@ -240,7 +246,8 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("load", () => {
-  setTheme(DEFAULT_THEME);
+  const savedTheme = localStorage.getItem("aurasys-theme") || DEFAULT_THEME;
+  setTheme(savedTheme);
   applySharedConfig();
   animateCounters();
   setHeaderState();
@@ -261,3 +268,9 @@ if (menuToggle) menuToggle.addEventListener("click", toggleMenu);
 if (siteNav) siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 if (backToTop) backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 if (form) form.addEventListener("submit", handleSubmit);
+if (form) {
+  form.querySelectorAll("input, textarea").forEach((field) => {
+    field.addEventListener("input", clearMessage);
+    field.addEventListener("change", clearMessage);
+  });
+}
