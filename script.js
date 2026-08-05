@@ -211,7 +211,6 @@ async function sendRequest(payload) {
 function resetForm() {
   if (!form) return;
   form.reset();
-  clearMessage();
   const defaultRequirement = form.querySelector('input[name="requerimiento"][value="Estructurar un nuevo proyecto"]');
   if (defaultRequirement) defaultRequirement.checked = true;
 }
@@ -228,12 +227,11 @@ async function handleSubmit(event) {
   try {
     const payload = buildPayload();
     await sendRequest(payload);
-    showMessage("Gracias por contactarnos. Hemos recibido tu solicitud y revisaremos la información para responderte por el medio que indicaste.", "success");
     resetForm();
+    showMessage("Gracias por completar el formulario. Nos contactaremos pronto.", "success");
   } catch (error) {
     console.error(error);
-    const detail = error instanceof Error ? error.message : "Error desconocido";
-    showMessage(`No pudimos enviar tu solicitud. ${detail}`, "error");
+    showMessage("No pudimos enviar el formulario en este momento. Inténtalo de nuevo en unos minutos o contáctanos por WhatsApp o correo.", "error");
   } finally {
     submitBtn.disabled = false;
     submitBtn.textContent = "Enviar solicitud";
