@@ -154,21 +154,23 @@ function showMessage(text, type) {
 
 function validateForm() {
   if (!form) return true;
+  
   const fullName = document.getElementById("nombreCompleto")?.value.trim();
   const contactMethod = document.getElementById("medioContacto")?.value.trim();
-  // Buscamos el ID "descripcion"
   const problem = document.getElementById("descripcion")?.value.trim(); 
-  // Buscamos el Name "nivelClaridad"
-  const stage = form.querySelector('input[name="nivelClaridad"]:checked')?.value; 
+  const requirement = form.querySelector('input[name="requerimiento"]:checked')?.value; 
 
-  if (!fullName || !contactMethod || !problem || !stage) {
+  // Si alguno de los 4 no existe, lanza el error
+  if (!fullName || !contactMethod || !problem || !requirement) {
     showMessage("Completa los campos obligatorios para continuar.", "error");
     return false;
   }
+  
   if (!validateContact(contactMethod)) {
     showMessage("Ingresa un correo válido o un número de WhatsApp con al menos 8 dígitos.", "error");
     return false;
   }
+  
   return true;
 }
 
@@ -176,10 +178,8 @@ function buildPayload() {
   return {
     nombreCompleto: document.getElementById("nombreCompleto")?.value.trim() || "",
     medioContacto: document.getElementById("medioContacto")?.value.trim() || "",
-    // Usamos la llave exacta "descripcion" y buscamos el ID "descripcion"
     descripcion: document.getElementById("descripcion")?.value.trim() || "",
-    // Usamos la llave exacta "nivelClaridad" y buscamos el Name "nivelClaridad"
-    nivelClaridad: form.querySelector('input[name="nivelClaridad"]:checked')?.value || "",
+    requerimiento: form.querySelector('input[name="requerimiento"]:checked')?.value || "",
   };
 }
 
@@ -207,9 +207,8 @@ async function sendRequest(payload) {
 function resetForm() {
   if (!form) return;
   form.reset();
-  // Reinicia buscando el Name "nivelClaridad"
-  const defaultStage = form.querySelector('input[name="nivelClaridad"][value="Idea inicial"]');
-  if (defaultStage) defaultStage.checked = true;
+  const defaultRequirement = form.querySelector('input[name="requerimiento"][value="Estoy iniciando y necesito claridad para avanzar"]');
+  if (defaultRequirement) defaultRequirement.checked = true;
 }
 
 async function handleSubmit(event) {
@@ -241,8 +240,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("load", () => {
-  const savedTheme = localStorage.getItem("aurasys-theme") || DEFAULT_THEME;
-  setTheme(savedTheme);
+  setTheme(DEFAULT_THEME);
   applySharedConfig();
   animateCounters();
   setHeaderState();
