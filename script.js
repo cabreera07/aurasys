@@ -11,6 +11,7 @@ const faqButtons = document.querySelectorAll(".faq-question");
 const animatedElements = document.querySelectorAll("[data-animate], .service-card, .timeline-step");
 const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
+let navBackdrop = null;
 
 function setTheme(theme) {
   const resolvedTheme = theme || DEFAULT_THEME;
@@ -87,13 +88,29 @@ function updateScrollProgress() {
 function toggleMenu() {
   if (!siteNav || !menuToggle) return;
   const isOpen = siteNav.classList.toggle("open");
+  menuToggle.classList.toggle("active", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
+  document.body.classList.toggle("menu-open", isOpen);
+  if (navBackdrop) navBackdrop.classList.toggle("open", isOpen);
 }
 
 function closeMenu() {
   if (!siteNav || !menuToggle) return;
   siteNav.classList.remove("open");
+  menuToggle.classList.remove("active");
   menuToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("menu-open");
+  if (navBackdrop) navBackdrop.classList.remove("open");
+}
+
+function ensureMenuBackdrop() {
+  if (!siteNav || !menuToggle || navBackdrop) return;
+  navBackdrop = document.createElement("button");
+  navBackdrop.type = "button";
+  navBackdrop.className = "nav-backdrop";
+  navBackdrop.setAttribute("aria-label", "Cerrar menu");
+  navBackdrop.addEventListener("click", closeMenu);
+  document.body.appendChild(navBackdrop);
 }
 
 function setActiveNav() {
@@ -115,7 +132,11 @@ function observeAnimations() {
     });
   }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
 
-  animatedElements.forEach((element) => observer.observe(element));
+  animatedElements.forEach((element, index) => {
+    const delay = Math.min(index * 60, 300);
+    element.style.transitionDelay = `${delay}ms`;
+    observer.observe(element);
+  });
 }
 
 function setupFaq() {
@@ -246,6 +267,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("aurasys-theme") || DEFAULT_THEME;
   setTheme(savedTheme);
+  ensureMenuBackdrop();
   applySharedConfig();
   animateCounters();
   setHeaderState();
@@ -265,6 +287,15 @@ if (themeToggle) {
 if (menuToggle) menuToggle.addEventListener("click", toggleMenu);
 if (siteNav) siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 if (backToTop) backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu();
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 960) closeMenu();
+});
+
 if (form) form.addEventListener("submit", handleSubmit);
 if (form) {
   form.querySelectorAll("input, textarea").forEach((field) => {
