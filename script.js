@@ -12,6 +12,42 @@ const animatedElements = document.querySelectorAll("[data-animate], .service-car
 const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
 let navBackdrop = null;
+let rafMouse = null;
+
+function initCosmicBackground() {
+  if (document.querySelector(".cosmic-bg")) return;
+
+  const cosmic = document.createElement("div");
+  cosmic.className = "cosmic-bg";
+  cosmic.setAttribute("aria-hidden", "true");
+  cosmic.innerHTML = `
+    <div class="star-layer layer-1"></div>
+    <div class="star-layer layer-2"></div>
+    <div class="star-layer layer-3"></div>
+    <div class="cosmic-glow"></div>
+  `;
+
+  document.body.prepend(cosmic);
+}
+
+function initPointerParallax() {
+  const supportsFinePointer = window.matchMedia("(pointer: fine)").matches;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!supportsFinePointer || reduceMotion) return;
+
+  const update = (event) => {
+    const x = (event.clientX / window.innerWidth - 0.5) * 18;
+    const y = (event.clientY / window.innerHeight - 0.5) * 18;
+
+    if (rafMouse) cancelAnimationFrame(rafMouse);
+    rafMouse = requestAnimationFrame(() => {
+      document.documentElement.style.setProperty("--mouse-x", `${x.toFixed(2)}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${y.toFixed(2)}px`);
+    });
+  };
+
+  window.addEventListener("pointermove", update, { passive: true });
+}
 
 function setTheme(theme) {
   const resolvedTheme = theme || DEFAULT_THEME;
@@ -249,7 +285,7 @@ async function handleSubmit(event) {
     const payload = buildPayload();
     await sendRequest(payload);
     resetForm();
-    showMessage("Gracias por completar el formulario. Nos contactaremos pronto.", "success");
+    showMessage("Gracias por completar el formulario. Nos contactaremos en 1 a 2 días hábiles.", "success");
   } catch (error) {
     console.error(error);
     showMessage("No pudimos enviar el formulario en este momento. Inténtalo de nuevo en unos minutos o contáctanos por WhatsApp o correo.", "error");
@@ -266,7 +302,9 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("load", () => {
   const savedTheme = localStorage.getItem("aurasys-theme") || DEFAULT_THEME;
+  initCosmicBackground();
   setTheme(savedTheme);
+  initPointerParallax();
   ensureMenuBackdrop();
   applySharedConfig();
   animateCounters();
