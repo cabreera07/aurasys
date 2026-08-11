@@ -24,6 +24,9 @@ function initCosmicBackground() {
     <div class="star-layer layer-1"></div>
     <div class="star-layer layer-2"></div>
     <div class="star-layer layer-3"></div>
+    <div class="shooting-star star-a"></div>
+    <div class="shooting-star star-b"></div>
+    <div class="orbit-rocket"></div>
     <div class="cosmic-glow"></div>
   `;
 
